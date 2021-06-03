@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+   <children>
+      <Button fx:id="Go2Profile_button" layoutX="140.0" layoutY="180.0" mnemonicParsing="false" onAction="#gotoProfile" prefHeight="39.0" prefWidth="120.0" text="Profile" />
+      <Button fx:id="NewPost_button" layoutX="140.0" layoutY="248.0" mnemonicParsing="false" onAction="#go2NewPostPage" prefHeight="39.0" prefWidth="120.0" text="New Post" />
+      <Button fx:id="Logout_button" layoutX="159.0" layoutY="524.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="39.0" prefWidth="82.0" text="LOG OUT" />
+   </children>
+</Pane>

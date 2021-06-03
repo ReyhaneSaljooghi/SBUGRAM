@@ -38,7 +38,7 @@ public class Createaccountcontroller  {
     public javafx.scene.image.ImageView imageProfile;
     @FXML
     public void initialize() throws IOException {
-       File file=new File("C:\\Users\\Saljooghi\\Desktop\\HiiFx\\images\\istockphoto-922962354-612x612.jpg");
+       File file=new File("C:\\Users\\Saljooghi\\Desktop\\Project\\images\\istockphoto-922962354-612x612.jpg");
        Main.profileImage=Files.readAllBytes(file.toPath());
         Image image=new Image(new ByteArrayInputStream(Main.profileImage));
         imageProfile.setImage(image);

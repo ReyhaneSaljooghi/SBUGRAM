@@ -1,5 +1,6 @@
 package Model.ServerSide;
 
+import Model.DB.DataBase;
 import Model.ServerAndClient.Command;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
@@ -27,14 +28,19 @@ public class ServerHandlerCommands {
             return ans;
         }
         Profile profile = ServerMain.profiles.get(username);
+        if (!profile.getPassword().equals(password))
+            ans.put("passwordcorrect",false);
+        else
+            ans.put("passwordcorrect",true);
         ans.put("answer",profile);
 
-        if(profile != null){
+        if(profile != null&& profile.getPassword().equals(password)){
             System.out.println(profile.getUserName() + " sign in");
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             Date date = new Date();
             System.out.println("at the time: "+ formatter.format(date));
         }
+        DataBase.getDataBase().updateDB();
         return ans;
     }
    public static Map<String,Object> sign_up(Map<String,Object> income){
@@ -48,6 +54,7 @@ public class ServerHandlerCommands {
        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
        Date date = new Date();
        System.out.println("at the time: "+ formatter.format(date));
+       DataBase.getDataBase().updateDB();
        return ans;
 
   }
@@ -63,7 +70,7 @@ public class ServerHandlerCommands {
         Map<String,Object> ans = new HashMap<>();
         ans.put("answer",exist);
         ans.put("command",Command.Usernameexist);
-
+        DataBase.getDataBase().updateDB();
         return ans;
     }
     public  static Map<String,Object> SendPostsOfcurrentUser(Map<String,Object> income){
@@ -81,6 +88,7 @@ public class ServerHandlerCommands {
             System.out.println("haji nulle ");
         ans.put("answer",CurrentUserposts);
         //ans.put("command",Command.GetAllposts);
+        DataBase.getDataBase().updateDB();
 
         return ans;
 
@@ -91,6 +99,7 @@ public class ServerHandlerCommands {
         String username=(String) income.get("username");
         Profile profile = ServerMain.profiles.get(username);
         ans.put("answer",profile);
+        DataBase.getDataBase().updateDB();
         return ans;
     }
     public static Map<String,Object> Repost(Map<String,Object> income){
@@ -107,6 +116,7 @@ public class ServerHandlerCommands {
         ans.put("answer",new Boolean(true));
         System.out.println("action: "+username+" reposted "+reposted.getWriter()+" "+reposted.getTitle());
         System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
         return ans;
     }
     public static Map<String,Object> Like(Map<String,Object> income) {
@@ -118,6 +128,7 @@ public class ServerHandlerCommands {
         System.out.println("action: "+username+" liked "+liked.getWriter()+" "+liked.getTitle());
         System.out.println("at the time: "+ formatter.format(new Date()));
         ans.put("answer",new Boolean(true));
+        DataBase.getDataBase().updateDB();
         return ans;
 
     }

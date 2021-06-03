@@ -1,5 +1,6 @@
 package Model.ServerSide;
 
+import Model.DB.DataBase;
 import Model.Main;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
@@ -55,6 +56,9 @@ public class ServerMain {
         File file2=new File("C:\\Users\\Saljooghi\\Desktop\\Project\\images\\simple.jpg");
         check.setProfileImage(Files.readAllBytes(file.toPath()));
         following1.setProfileImage(Files.readAllBytes(file2.toPath()));
+        //initialize
+        DataBase.getDataBase().loadfirst();
+       System.out.println(profiles.get("raha").getPassword());
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(PORT);
@@ -62,7 +66,6 @@ public class ServerMain {
             e.printStackTrace();
         }
         System.out.println("waiting for client to connect");
-
         while (isUp) {
             Socket s = ss.accept();
             System.out.println("client connected");

@@ -11,7 +11,10 @@ public class ClientHandlerCommands {
         tosendserver .put("username",username);
         tosendserver .put("password",password);
         Map<String,Object> recieved = Clientconnection.serve(tosendserver );
-        if ( recieved.get("answer") == null ) return null;
+        if (!(Boolean)recieved.get("exists"))
+            return null;
+        if (!(boolean) recieved.get("passwordcorrect"))
+            return null;
         return (Profile) recieved.get("answer");
     }
     public  static Boolean sign_up(Profile profile){

@@ -45,11 +45,17 @@ public class LoginController {
            Main.currentpassword = pass_word_feild.getText();
         else
             Main.currentpassword= password_visible.getText();
-
+        if (!ClientHandlerCommands.CheckUsername(username_feild.getText())){
+            System.out.println("wrong username");
+            wrong_username_label.setVisible(true);
+            return;
+        }
         Main.currentusername = username_feild.getText();
         Profile profile = ClientHandlerCommands.sign_in(Main.currentusername,Main.currentpassword);
         if(profile == null){
             wrong_password_label.setVisible(true);
+            System.out.println("wrong pass");
+            return;
         }
         else {
             Main.setCurrentProfile(profile);

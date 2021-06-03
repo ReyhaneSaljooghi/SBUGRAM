@@ -1,22 +1,90 @@
 package Model.DB;
 
-import java.io.File;
+import Model.ServerAndClient.Post;
+import Model.ServerAndClient.Profile;
+import Model.ServerSide.ServerMain;
+
+import java.io.*;
+import java.util.Vector;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DataBase {
-    //public static final File =new File()
+    public static final String PROFILE_FILE = "Model/DB/profiles.bin";
+    public static final String POSTS_FILE = "Model/DB/posts.bin";
+
     private DataBase() {
     }
-    public  static DataBase dataBase=new DataBase();
+
+    public static DataBase dataBase = new DataBase();
+
 
     public static DataBase getDataBase() {
         return dataBase;
     }
-    public synchronized  void loadfirst(){
 
-       // File file=new File(PROFILE_FILE);
-
-
-
-
+    public synchronized void loadfirst() {
+        File profile_file = new File(PROFILE_FILE);
+        File post_file = new File(POSTS_FILE);
+        if (!post_file.exists()) {
+            try {
+                post_file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            ServerMain.profiles = new ConcurrentHashMap<>((ConcurrentHashMap<String, Profile>) readdb(PROFILE_FILE));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (!profile_file.exists()) {
+            try {
+                profile_file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            ServerMain.AllPosts = new Vector<>((Vector<Post>) readdb(POSTS_FILE));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
+
+    public synchronized void updateDB() {
+        try {
+            writedb(PROFILE_FILE,ServerMain.profiles);
+            writedb(POSTS_FILE,ServerMain.AllPosts);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Object readdb(String address) throws ClassNotFoundException {
+        Object obj = null;
+        try (FileInputStream fis = new FileInputStream(address);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            obj = ois.readObject();
+            fis.close();
+            ois.close();
+        } catch (IOException e) {
+            System.out.println("failed to read " + e.getMessage());
+        }
+
+        return obj;
+    }
+
+    public void writedb(String address, Object obj) throws IOException {
+        try (FileOutputStream fout = new FileOutputStream(address);
+             ObjectOutputStream oout = new ObjectOutputStream(fout)) {
+            oout.writeObject(obj);
+            fout.close();
+            oout.close();
+        } catch (IOException e) {
+            System.out.println("failed to write " + e.getMessage());
+        }
+    }
+
+
 }

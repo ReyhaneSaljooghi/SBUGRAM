@@ -35,7 +35,7 @@ public class Timelinecontroller {
         //customize each cell of postList with new graphic object PostItem
         postList.setCellFactory(postList -> new PostItem());
     }
-
+//onja add nadarim ha. pak kon badesh
     public void addPost(ActionEvent actionEvent) {
         //set the post features
         currentPost.setTitle(title_field.getText());

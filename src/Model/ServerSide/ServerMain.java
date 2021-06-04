@@ -47,6 +47,7 @@ public class ServerMain {
         AllPosts.add(p2);
         AllPosts.add(p3);
         Profile following1=new Profile("mamad");
+        following1.setName("mamadali");
         check.followings.add(following1);
         Profile notfollowing=new Profile("akbar");
         p1.setPublisher(check);

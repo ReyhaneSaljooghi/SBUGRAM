@@ -85,6 +85,12 @@ public class PostItemController {
 
     }
     public void  view_profile(ActionEvent actionEvent){
+        ProfilePagecontroller.profile=post.getPublisher();
+        try {
+            new PageLoader().load("ProfilePage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

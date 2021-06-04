@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.5836120401337793" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfilePagecontroller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="398.0">
+         <children>
+            <Label fx:id="following_label" layoutX="344.0" layoutY="209.0" text="Label" />
+            <Label fx:id="followers_label" layoutX="78.0" layoutY="209.0" text="Label" />
+            <Label layoutX="14.0" layoutY="209.0" text="followers:" />
+            <Label layoutX="277.0" layoutY="209.0" text="followings:" />
+            <ImageView fx:id="imageview_field" fitHeight="120.0" fitWidth="119.0" layoutX="20.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="name_label" layoutX="150.0" layoutY="15.0" text="name and lastname" />
+            <Label fx:id="username_label" layoutX="150.0" layoutY="55.0" text="username" />
+            <Label fx:id="location_label" layoutX="150.0" layoutY="93.0" text="location" />
+            <Label fx:id="birthdate_label" layoutX="150.0" layoutY="135.0" text="birth date" />
+            <Button fx:id="follow_button" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#follow" text="follow" />
+            <Button fx:id="block_button" layoutX="173.0" layoutY="281.0" mnemonicParsing="false" onAction="#block" text="block" />
+            <Button fx:id="mute_button" layoutX="283.0" layoutY="281.0" mnemonicParsing="false" onAction="#mute" text="mute" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="398.0">
+         <children>
+            <ListView fx:id="postlist" layoutX="121.0" layoutY="48.0" prefHeight="266.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

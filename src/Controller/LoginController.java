@@ -63,13 +63,7 @@ public class LoginController {
         }
         wrong_username_label.setVisible(false);
         wrong_password_label.setVisible(false);
-        //password ghalate
-        //else if(){
-        //}
-        //esme karbari ghalate
-        //else {
-        //wrong_username_label.setVisible(true);
-        // }
+
     }
 
     public void Sign_up_action(ActionEvent actionEvent) {

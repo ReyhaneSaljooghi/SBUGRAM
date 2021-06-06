@@ -36,8 +36,8 @@
                      </input></DropShadow>
                </effect>
             </Button>
-            <Button fx:id="refresh_button" layoutX="21.0" layoutY="186.0" mnemonicParsing="false" text="refresh" />
-            <Button fx:id="Menu_button" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" text="Menu" />
+            <Button fx:id="refresh_button" layoutX="21.0" layoutY="186.0" mnemonicParsing="false" onAction="#Refresh" text="refresh" />
+            <Button fx:id="Menu_button" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" onAction="#GotoMenu" text="Menu" />
          </children>
          <effect>
             <ColorAdjust />

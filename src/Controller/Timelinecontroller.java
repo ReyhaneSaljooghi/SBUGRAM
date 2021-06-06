@@ -67,18 +67,6 @@ public class Timelinecontroller {
         description_field.setText("");
     }
 
-
-    //this function is usable for uncustomized_cell listview of strings
-    public void showPost(MouseEvent mouseEvent) {
-        Post p = new Post();
-        //p.setTitle(postList.getSelectionModel().getSelectedItem());
-        for (int i = 0; i < posts.size(); i++) {
-            if (posts.get(i).equals(p)) {
-                title_field.setText(posts.get(i).getTitle());
-                description_field.setText(posts.get(i).getDescription());
-            }
-        }
-    }
 //check kon ino
     public void Refresh(ActionEvent actionEvent) {
         try {
@@ -89,6 +77,11 @@ public class Timelinecontroller {
     }
 
     public void GotoMenu(ActionEvent actionEvent) {
+        try {
+            new PageLoader().load("Menu");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

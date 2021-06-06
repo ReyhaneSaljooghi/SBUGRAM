@@ -28,7 +28,7 @@ public class ClientHandlerCommands {
     public static boolean CheckUsername(String username){
         Map<String,Object> toSendserver = new HashMap<>();
         toSendserver.put("username",username);
-        toSendserver.put("command", Command.Usernameexist);
+        toSendserver.put("command", Command.UsernameExist);
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }
@@ -42,7 +42,7 @@ public class ClientHandlerCommands {
     }
     public static Profile get_profile_by_Username(String username){
         Map<String,Object> tosendserver = new HashMap<>();
-        tosendserver .put("command", Command.getprofilebyusername);
+        tosendserver .put("command", Command.getProfileByUsername);
         tosendserver .put("username",username);
         Map<String,Object> recieved = Clientconnection.serve(tosendserver );
         if ( recieved.get("answer") == null ) return null;
@@ -61,6 +61,14 @@ public class ClientHandlerCommands {
         toSendserver.put("username",username);
         toSendserver.put("post",post);
         toSendserver.put("command", Command.Like);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (boolean) recieved.get("answer");
+    }
+    public static boolean toAddComment(Comment comment,Post post){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("comment",comment);
+        toSendserver.put("post",post);
+        toSendserver.put("command", Command.AddComment);
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }

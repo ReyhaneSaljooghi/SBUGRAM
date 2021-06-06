@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -11,18 +13,63 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="398.0">
          <children>
-            <Label fx:id="following_label" layoutX="344.0" layoutY="209.0" text="Label" />
-            <Label fx:id="followers_label" layoutX="78.0" layoutY="209.0" text="Label" />
-            <Label layoutX="14.0" layoutY="209.0" text="followers:" />
-            <Label layoutX="277.0" layoutY="209.0" text="followings:" />
+            <Label fx:id="following_label" layoutX="346.0" layoutY="210.0" text="Label" />
+            <Label fx:id="followers_label" layoutX="92.0" layoutY="210.0" text="Label" />
+            <Label layoutX="14.0" layoutY="205.0" prefHeight="25.0" prefWidth="67.0" text="followers:" textFill="#2cdaaf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="262.0" layoutY="208.0" text="followings:" textFill="#37c6b1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             <ImageView fx:id="imageview_field" fitHeight="120.0" fitWidth="119.0" layoutX="20.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="name_label" layoutX="150.0" layoutY="15.0" text="name and lastname" />
-            <Label fx:id="username_label" layoutX="150.0" layoutY="55.0" text="username" />
-            <Label fx:id="location_label" layoutX="150.0" layoutY="93.0" text="location" />
-            <Label fx:id="birthdate_label" layoutX="150.0" layoutY="135.0" text="birth date" />
-            <Button fx:id="follow_button" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#follow" text="follow" />
-            <Button fx:id="block_button" layoutX="173.0" layoutY="281.0" mnemonicParsing="false" onAction="#block" text="block" />
-            <Button fx:id="mute_button" layoutX="283.0" layoutY="281.0" mnemonicParsing="false" onAction="#mute" text="mute" />
+            <Label fx:id="name_label" layoutX="225.0" layoutY="15.0" text="name and lastname" />
+            <Label fx:id="username_label" layoutX="225.0" layoutY="50.0" prefHeight="17.0" prefWidth="104.0" text="username" />
+            <Label fx:id="location_label" layoutX="225.0" layoutY="93.0" prefHeight="17.0" prefWidth="104.0" text="location" />
+            <Label fx:id="birthdate_label" layoutX="225.0" layoutY="135.0" prefHeight="17.0" prefWidth="104.0" text="birth date" />
+            <Button fx:id="follow_button" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#follow" prefHeight="39.0" prefWidth="67.0" text="follow">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="block_button" layoutX="173.0" layoutY="281.0" mnemonicParsing="false" onAction="#block" prefHeight="39.0" prefWidth="67.0" text="block" textFill="#266975">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="mute_button" layoutX="277.0" layoutY="281.0" mnemonicParsing="false" onAction="#mute" prefHeight="39.0" prefWidth="67.0" text="mute">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Label layoutX="146.0" layoutY="135.0" prefHeight="17.0" prefWidth="55.0" text="birth date:" />
+            <Label layoutX="146.0" layoutY="93.0" prefHeight="17.0" prefWidth="55.0" text="location:" />
+            <Label layoutX="146.0" layoutY="50.0" text="username:" />
+            <Label layoutX="146.0" layoutY="15.0" prefHeight="17.0" prefWidth="55.0" text="name:" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="398.0">
          <children>

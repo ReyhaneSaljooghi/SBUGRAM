@@ -15,7 +15,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class PostItemController {
     public AnchorPane root;
@@ -25,11 +27,12 @@ public class PostItemController {
     public Label numberOfreposts;
     public Label DateAndTimelabel;
     public ImageView PosterProfileimage;
+    public ImageView postImageview;
+    public ImageView like_imageView;
     public TextArea post_description_area;
     public Button view_profile_button;
     public Button Like_button;
     public Button add_comments_button;
-    public Circle like_circle=new Circle() ;
     Post post;
 
     //each list item will have its exclusive controller in runtime so we set the controller as we load the fxml
@@ -39,7 +42,7 @@ public class PostItemController {
     }
 
     //this anchor pane is returned to be set as the list view item
-    public AnchorPane init() {
+    public AnchorPane init() throws IOException {
         username_postitem.setText(post.getWriter());
         title.setText(post.getTitle());
         DateAndTimelabel.setText(post.getCreatedTimeString());
@@ -48,28 +51,46 @@ public class PostItemController {
             image = new Image(new ByteArrayInputStream(post.getPublisher().getProfileImage()));
             PosterProfileimage.setImage(image);
         }
+        if (post.getImageAttachedTopost()!=null){
+            image = new Image(new ByteArrayInputStream(post.getImageAttachedTopost()));
+            postImageview.setImage(image);
+        }
         post_description_area.setText(post.getDescription());
         numberOflikes.setText(String.valueOf(post.Likers.size()));
         numberOfreposts.setText(String.valueOf(post.numberOfReposts));
         if (post.Likers.contains(Main.currentProfile)) {
-            like_circle.setVisible(true);
+            File file=new File("images/like.jpg");
+            byte[]b= Files.readAllBytes(file.toPath());
+            Image image1=new Image(new ByteArrayInputStream(b));
+            like_imageView.setImage(image1);
+
         }
         return root;
     }
     /*
     you can also add on mouse click for like and repost image
      */
-    public void LikeAction(ActionEvent actionEvent){
+    public void LikeAction(ActionEvent actionEvent) throws IOException {
         if (post.Likers.contains(Main.currentProfile)) {
             return;
         }
 
-      if (ClientHandlerCommands.Like(post,Main.currentusername))
-        like_circle.setVisible(true);
+      if (ClientHandlerCommands.Like(post,Main.currentusername)) {
+          File file=new File("images/like.jpg");
+          byte[]b= Files.readAllBytes(file.toPath());
+          Image image1=new Image(new ByteArrayInputStream(b));
+          like_imageView.setImage(image1);
+      }
 
     }
 
     public void   add_comments(ActionEvent actionEvent){
+        Addcommentcontroller.post=post;
+        try {
+            new PageLoader().load("Addcomment");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
     public void   Repost(ActionEvent actionEvent){
@@ -82,6 +103,11 @@ public class PostItemController {
 
     }
     public void   view_comments(ActionEvent actionEvent){
+        try {
+            new PageLoader().load("showAllComments");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
     public void  view_profile(ActionEvent actionEvent){

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Profile implements Serializable {
+    private static final long serialVersionUID = -7523282726772266610L;
     private final String username;
     private String password;
     private String name;

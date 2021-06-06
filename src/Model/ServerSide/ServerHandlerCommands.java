@@ -2,6 +2,7 @@ package Model.ServerSide;
 
 import Model.DB.DataBase;
 import Model.ServerAndClient.Command;
+import Model.ServerAndClient.Comment;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
 
@@ -69,7 +70,7 @@ public class ServerHandlerCommands {
             exist=false;
         Map<String,Object> ans = new HashMap<>();
         ans.put("answer",exist);
-        ans.put("command",Command.Usernameexist);
+        ans.put("command",Command.UsernameExist);
         DataBase.getDataBase().updateDB();
         return ans;
     }
@@ -124,10 +125,28 @@ public class ServerHandlerCommands {
         String username=(String) income.get("username");
         Profile profile = ServerMain.profiles.get(username);
         Post liked=(Post) income.get("post");
-        liked.Likers.add(profile);
-        System.out.println("action: "+username+" liked "+liked.getWriter()+" "+liked.getTitle());
+        for (int i=0;i<ServerMain.AllPosts.size();i++){
+            if(ServerMain.AllPosts.get(i).equals(liked))
+                ServerMain.AllPosts.get(i).Likers.add(profile);
+        }
+        System.out.println(username+" liked "+liked.getWriter()+" "+liked.getTitle());
         System.out.println("at the time: "+ formatter.format(new Date()));
         ans.put("answer",new Boolean(true));
+        DataBase.getDataBase().updateDB();
+        return ans;
+
+    }
+    public static Map<String,Object> toAddComment(Map<String,Object> map){
+        Map<String,Object> ans = new HashMap<>();
+        Comment comment=(Comment)map.get("comment");
+        Post commented=(Post) map.get("post");
+        for (int i=0;i<ServerMain.AllPosts.size();i++){
+            if(ServerMain.AllPosts.get(i).equals(commented))
+                ServerMain.AllPosts.get(i).comments.add(comment);
+        }
+        System.out.println(comment.getWriter()+" commented "+commented.getTitle());
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        ans.put("answer",true);
         DataBase.getDataBase().updateDB();
         return ans;
 

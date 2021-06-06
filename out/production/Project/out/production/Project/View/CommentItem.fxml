@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea fx:id="commentText_area" layoutX="45.0" layoutY="146.0" prefHeight="131.0" prefWidth="307.0" />
+      <Label fx:id="writername_label" layoutX="142.0" layoutY="57.0" prefHeight="17.0" prefWidth="70.0" text="Label" />
+      <Label layoutX="45.0" layoutY="57.0" text="writer:" />
+   </children>
+</AnchorPane>

@@ -4,11 +4,12 @@ public enum Command {
     sign_in,
     sign_up,
     AddPost,
-    Usernameexist,
+    UsernameExist,
     GetAllposts,
-    getprofilebyusername,
+    getProfileByUsername,
     Repost,
     Like,
-    //command ha kamel nista haji
+    AddComment,
+
 
 }

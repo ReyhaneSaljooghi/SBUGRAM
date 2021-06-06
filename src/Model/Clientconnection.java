@@ -25,7 +25,6 @@ public class Clientconnection
     public static Boolean connectToServer(){
         if(socket != null) return false;
         try{
-            System.out.println("server ip : " + serverAddress);
             socket = new Socket( serverAddress, PORT);
             socketOutput = new ObjectOutputStream( socket.getOutputStream() );
             socketInput = new ObjectInputStream( socket.getInputStream() );
@@ -45,7 +44,7 @@ public class Clientconnection
         try{
             socketOutput.writeObject(toSend);
             socketOutput.flush();
-            //lazeme?
+            //lazeme?????????????????
             socketOutput.reset();
             recieved = (Map<String,Object>) socketInput.readObject();
             return recieved;
@@ -75,8 +74,8 @@ public class Clientconnection
                 e.printStackTrace();
             }
             isConnected = false;
-//        socket = null;
-//        socketInput = null;
-//        socketOutput = null;
+       socket = null;
+       socketInput = null;
+        socketOutput = null;
     }
 }

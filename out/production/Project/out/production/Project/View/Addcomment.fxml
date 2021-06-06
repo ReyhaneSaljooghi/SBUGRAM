@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Addcommentcontroller">
+   <children>
+      <TextArea fx:id="text_area_field" layoutX="33.0" layoutY="200.0" prefHeight="200.0" prefWidth="334.0" promptText="write your opinion here:" />
+      <Button fx:id="comment_button" layoutX="166.0" layoutY="447.0" mnemonicParsing="false" onAction="#releaseComment" prefHeight="40.0" prefWidth="78.0" text="comment!" />
+   </children>
+</Pane>

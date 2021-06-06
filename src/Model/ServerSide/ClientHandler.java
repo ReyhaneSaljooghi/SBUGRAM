@@ -41,13 +41,13 @@ public class ClientHandler implements Runnable {
                     case sign_up:
                       answer=ServerHandlerCommands.sign_up(income);
                       break;
-                    case Usernameexist:
+                    case UsernameExist:
                         answer=ServerHandlerCommands.CheckUsername(income);
                         break;
                     case  GetAllposts:
                         answer=ServerHandlerCommands.SendPostsOfcurrentUser(income);
                         break;
-                    case getprofilebyusername:
+                    case getProfileByUsername:
                         answer=ServerHandlerCommands.sendprofilebyusername(income);
                         break;
                     case Repost:
@@ -56,30 +56,28 @@ public class ClientHandler implements Runnable {
                     case Like:
                         answer=ServerHandlerCommands.Like(income);
                         break;
+                    case AddComment:
+                        answer=ServerHandlerCommands.toAddComment(income);
 
                     default:
-                        System.out.println("ridi");
+                        System.out.println("default");
 
 
                 }
                 if (answer==null)
-                    System.out.println("answer nulle ghable write object");
+                    System.out.println("answer is null before write object");
                 socketOut.writeObject(answer);
                 socketOut.flush();
             }
-            catch(ClassCastException | ClassNotFoundException e){
+            catch(ClassCastException e) {
+
+            }catch (ClassNotFoundException e){
+
             }
             catch(IOException e){
-                break;
+               break;
             }
 
-        }
-        try{
-            socketIn.close();
-            socketOut.close();
-            userSocket.close();
-        }catch(IOException e){
-            e.printStackTrace();
         }
 
     }

@@ -8,6 +8,8 @@ import java.util.Objects;
 import java.util.Vector;
 
 public class Post implements Comparable<Post>, Serializable {
+    private static final long serialVersionUID= 5032982360233766940L;
+
 
     private String writer;
     private String title;
@@ -18,6 +20,7 @@ public class Post implements Comparable<Post>, Serializable {
     public String createdTimeString;
     public Profile publisher;
     public Vector<Profile> Likers=new Vector<>();
+    public Vector<Comment>comments=new Vector<>();
 
     public Profile getPublisher() {
         return this.publisher;

@@ -25,18 +25,6 @@ public class DataBase {
     public synchronized void loadfirst() {
         File profile_file = new File(PROFILE_FILE);
         File post_file = new File(POSTS_FILE);
-        if (!post_file.exists()) {
-            try {
-                post_file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            ServerMain.profiles = new ConcurrentHashMap<>((ConcurrentHashMap<String, Profile>) readdb(PROFILE_FILE));
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         if (!profile_file.exists()) {
             try {
                 profile_file.createNewFile();
@@ -45,9 +33,25 @@ public class DataBase {
             }
         }
         try {
+            ServerMain.profiles = new ConcurrentHashMap<>((ConcurrentHashMap<String, Profile>) readdb(PROFILE_FILE));
+        } catch (ClassNotFoundException e) {
+
+        }catch (NullPointerException e){
+
+        }
+        if (!post_file.exists()) {
+            try {
+                post_file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
             ServerMain.AllPosts = new Vector<>((Vector<Post>) readdb(POSTS_FILE));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        }catch (NullPointerException e){
+
         }
     }
 
@@ -69,7 +73,8 @@ public class DataBase {
             fis.close();
             ois.close();
         } catch (IOException e) {
-            System.out.println("failed to read " + e.getMessage());
+           // e.printStackTrace();
+            //System.out.println("failed to read " + e.getMessage());
         }
 
         return obj;
@@ -82,7 +87,7 @@ public class DataBase {
             fout.close();
             oout.close();
         } catch (IOException e) {
-            System.out.println("failed to write " + e.getMessage());
+           // System.out.println("failed to write " + e.getMessage());
         }
     }
 

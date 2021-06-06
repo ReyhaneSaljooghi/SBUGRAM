@@ -27,7 +27,8 @@ public class ServerMain {
 
 
     public static void main(String[] args) throws IOException {
-        //bara check kardan inke okeye ya na
+
+     DataBase.getDataBase().loadfirst();
         Profile check=new Profile("reyhane");
         check.setPassword("1212");
         profiles.put("reyhane",check);
@@ -40,9 +41,9 @@ public class ServerMain {
         Post p3=new Post();
         p3.setTitle("hi third one");
         p3.setWriter("akbar");
-       p1.setCreatedTimeString(new Date());
-       p2.setCreatedTimeString(new Date());
-       p3.setCreatedTimeString(new Date());
+        p1.setCreatedTimeString(new Date());
+        p2.setCreatedTimeString(new Date());
+        p3.setCreatedTimeString(new Date());
         AllPosts.add(p1);
         AllPosts.add(p2);
         AllPosts.add(p3);
@@ -57,9 +58,8 @@ public class ServerMain {
         File file2=new File("C:\\Users\\Saljooghi\\Desktop\\Project\\images\\simple.jpg");
         check.setProfileImage(Files.readAllBytes(file.toPath()));
         following1.setProfileImage(Files.readAllBytes(file2.toPath()));
-        //initialize
-        DataBase.getDataBase().loadfirst();
-       System.out.println(profiles.get("raha").getPassword());
+
+
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(PORT);
@@ -72,6 +72,6 @@ public class ServerMain {
             System.out.println("client connected");
           new Thread(new ClientHandler(s)).start();
         }
-        System.out.println(p2.Likers);
+
     }
 }

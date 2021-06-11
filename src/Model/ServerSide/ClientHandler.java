@@ -58,6 +58,13 @@ public class ClientHandler implements Runnable {
                         break;
                     case AddComment:
                         answer=ServerHandlerCommands.toAddComment(income);
+                        break;
+                    case GetAllProfiles:
+                        answer=ServerHandlerCommands.sendAllProfiles(income);
+                        break;
+                    case LogOut:
+                        answer=ServerHandlerCommands.logout(income);
+                        break;
 
                     default:
                         System.out.println("default");

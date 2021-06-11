@@ -33,17 +33,24 @@ public class ProfilePagecontroller {
     Post thisPost = new Post();
     @FXML
     public void initialize() {
+
        this.name_label.setText(profile.getName());
+
         this.followers_label.setText(String.valueOf(profile.followings.size()));
        this.username_label.setText(profile.getUserName());
-        Image image = new Image(new ByteArrayInputStream(profile.getProfileImage()));
-        this.imageview_field.setImage(image);
 
+       if (profile.getProfileImage()!=null) {
+           Image image = new Image(new ByteArrayInputStream(profile.getProfileImage()));
+           this.imageview_field.setImage(image);
+       }
         allPostsOfThisProfile= ClientHandlerCommands.givePostsOfcurrentUser(username_label.getText());
+
         postlist.setItems(FXCollections.observableArrayList(allPostsOfThisProfile));
+
 
         //customize each cell of postList with new graphic object PostItem
         postlist.setCellFactory(postList -> new PostItem());
+        System.out.println("profile page controller6");
     }
 
     public void follow(ActionEvent actionEvent) {

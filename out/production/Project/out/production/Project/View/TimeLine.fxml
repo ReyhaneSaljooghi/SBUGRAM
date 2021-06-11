@@ -7,37 +7,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Timelinecontroller">
+<SplitPane dividerPositions="0.34782608695652173" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Timelinecontroller">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: gray;">
          <children>
-            <TextField fx:id="title_field" layoutX="125.0" layoutY="27.0" promptText="title" style="-fx-background-color: lightcyan;">
-               <effect>
-                  <ColorAdjust brightness="-0.12" contrast="0.02" hue="-0.02" saturation="0.09">
-                     <input>
-                        <InnerShadow />
-                     </input>
-                  </ColorAdjust>
-               </effect>
-            </TextField>
-            <TextArea fx:id="description_field" layoutX="99.0" layoutY="67.0" prefHeight="144.0" prefWidth="200.0" promptText="description">
-               <effect>
-                  <InnerShadow color="#0f796e">
-                     <input>
-                        <InnerShadow />
-                     </input></InnerShadow>
-               </effect>
-            </TextArea>
-            <Button layoutX="173.0" layoutY="231.0" mnemonicParsing="false" onAction="#addPost" style="-fx-background-color: lightcyan;" text="publish" textFill="#259a87">
-               <effect>
-                  <DropShadow height="86.23" radius="47.0625" width="104.02">
-                     <input>
-                        <InnerShadow />
-                     </input></DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="refresh_button" layoutX="21.0" layoutY="186.0" mnemonicParsing="false" onAction="#Refresh" text="refresh" />
-            <Button fx:id="Menu_button" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" onAction="#GotoMenu" text="Menu" />
+            <Button fx:id="refresh_button" layoutX="165.0" layoutY="24.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="39.0" prefWidth="69.0" text="refresh" />
+            <Button fx:id="Menu_button" layoutX="167.0" layoutY="100.0" mnemonicParsing="false" onAction="#GotoMenu" prefHeight="39.0" prefWidth="69.0" text="Menu" />
          </children>
          <effect>
             <ColorAdjust />

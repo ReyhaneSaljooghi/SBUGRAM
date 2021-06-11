@@ -23,7 +23,6 @@ public class ServerHandlerCommands {
         else
             isNullProfile=false;
         Map<String,Object> ans = new HashMap<>();
-        ans.put("command", Command.sign_in);
         ans.put("exists",!isNullProfile);
         if(isNullProfile){
             return ans;
@@ -49,7 +48,6 @@ public class ServerHandlerCommands {
        String username = newProfile.getUserName();
        ServerMain.profiles.put(username,newProfile);
        Map<String,Object> ans = new HashMap<>();
-       ans.put("command",Command.sign_up);
        ans.put("answer",new Boolean(true));
        System.out.println(newProfile.getUserName() + " sign up and in!");
        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -70,7 +68,6 @@ public class ServerHandlerCommands {
             exist=false;
         Map<String,Object> ans = new HashMap<>();
         ans.put("answer",exist);
-        ans.put("command",Command.UsernameExist);
         DataBase.getDataBase().updateDB();
         return ans;
     }
@@ -88,7 +85,6 @@ public class ServerHandlerCommands {
         if (CurrentUserposts==null)
             System.out.println("haji nulle ");
         ans.put("answer",CurrentUserposts);
-        //ans.put("command",Command.GetAllposts);
         DataBase.getDataBase().updateDB();
 
         return ans;
@@ -96,7 +92,6 @@ public class ServerHandlerCommands {
     }
     public  static  Map<String,Object> sendprofilebyusername(Map<String,Object> income){
         Map<String,Object> ans = new HashMap<>();
-        //ans.put("command", Command.getprofilebyusername);
         String username=(String) income.get("username");
         Profile profile = ServerMain.profiles.get(username);
         ans.put("answer",profile);
@@ -151,6 +146,26 @@ public class ServerHandlerCommands {
         return ans;
 
     }
+
+    public static  Map<String,Object> sendAllProfiles(Map<String,Object> map) {
+        Map<String,Object> ans = new HashMap<>();
+        ArrayList<Profile>tobesend=new ArrayList<>();
+      for (Profile profile:ServerMain.profiles.values()){
+          tobesend.add(profile);
+      }
+        ans.put("answer",tobesend);
+        return ans;
+
+    }
+    public static Map<String,Object> logout(Map<String,Object> map){
+        Map<String,Object> ans = new HashMap<>();
+        String username=(String) map.get("username");
+        System.out.println(username+" log out ");
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        ans.put("answer",true);
+        return ans;
+    }
+
 
 
 }

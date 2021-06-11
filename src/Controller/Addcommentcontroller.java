@@ -21,8 +21,10 @@ public class Addcommentcontroller {
     }
 
     public void releaseComment(ActionEvent actionEvent) {
-        Comment newComment=new Comment(Main.currentusername,text_area_field.getText());
-        ClientHandlerCommands.toAddComment(newComment,post);
+
+        Comment newComment = new Comment(Main.currentusername, text_area_field.getText());
+        ClientHandlerCommands.addcomment(newComment, post);
+
         try {
             new PageLoader().load("TimeLine");
         } catch (IOException e) {

@@ -3,6 +3,7 @@ package Model;
 import Model.ServerAndClient.*;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ClientHandlerCommands {
     public static Profile sign_in(String username, String password){
@@ -64,13 +65,27 @@ public class ClientHandlerCommands {
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }
-    public static boolean toAddComment(Comment comment,Post post){
+    public static boolean addcomment(Comment comment,Post post){
         Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("command", Command.AddComment);
         toSendserver.put("comment",comment);
         toSendserver.put("post",post);
-        toSendserver.put("command", Command.AddComment);
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }
+    public static ArrayList<Profile>getProfiles(){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("command", Command.GetAllProfiles);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+
+        return (ArrayList<Profile>) (recieved.get("answer"));
+    }
+    public static boolean logout(String username){
+        Map<String,Object> toSendserver = new HashMap<>();
+       toSendserver.put("username",username);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (boolean) recieved.get("answer");
+    }
+
 
 }

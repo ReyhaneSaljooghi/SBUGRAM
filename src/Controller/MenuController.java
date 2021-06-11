@@ -1,6 +1,8 @@
 package Controller;
 
+import Model.ClientHandlerCommands;
 import Model.Clientconnection;
+import Model.Main;
 import Model.PageLoader;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -14,8 +16,7 @@ public class MenuController {
     public Button follow_button;
 
     public void LogOut(ActionEvent actionEvent) {
-        //??????/its not ok . fix it
-       // Clientconnection.disconnectFromServer();
+        ClientHandlerCommands.logout(Main.currentusername);
         try {
             new PageLoader().load("SignInOut");
         } catch (IOException e) {
@@ -29,6 +30,11 @@ public class MenuController {
     public void gotoProfile(ActionEvent actionEvent) {
     }
 
-    public void followList_action(ActionEvent actionEvent) {
+    public void followList_action(ActionEvent actionEvent)  {
+        try {
+            new PageLoader().load("Search2Follow");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

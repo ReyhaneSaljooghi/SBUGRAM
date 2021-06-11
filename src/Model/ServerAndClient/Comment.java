@@ -1,6 +1,8 @@
 package Model.ServerAndClient;
 
-public class Comment {
+import java.io.Serializable;
+
+public class Comment implements Serializable {
    private String writer;
    private String commentText;
    private Long createdTime;

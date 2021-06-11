@@ -10,6 +10,8 @@ public enum Command {
     Repost,
     Like,
     AddComment,
+    GetAllProfiles,
+    LogOut,
 
 
 }

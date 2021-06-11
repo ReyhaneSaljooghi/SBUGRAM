@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Profile implements Serializable {
     private static final long serialVersionUID = -7523282726772266610L;
-    private final String username;
+    private  String username;
     private String password;
     private String name;
     private String birthYear;
@@ -13,6 +13,9 @@ public class Profile implements Serializable {
     byte[] profileImage;
     //add new
     public  ArrayList<Profile>followings=new ArrayList<>();
+    public Profile(String username){
+        this.username =username;
+    }
 
     public byte[] getProfileImage() {
         return profileImage;
@@ -21,10 +24,10 @@ public class Profile implements Serializable {
     public void setProfileImage(byte[] profileimage) {
         this.profileImage = profileimage;
     }
-    public Profile(String username){
-        this.username =username;
-    }
 
+    public String getUsername() {
+        return username;
+    }
 
     @Override
     public int hashCode() {
@@ -90,11 +93,11 @@ public class Profile implements Serializable {
         return Integer.parseInt(birthYear);
     }
 
-
+//?????????
     public int getAge(){
         return 2020 - getBirthYear();
     }
-
+//?????//
     public static boolean isValidBirthYear(String yearStr){
         try{
             int yearInt = Integer.parseInt(yearStr);

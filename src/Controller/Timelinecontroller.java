@@ -18,8 +18,7 @@ import java.util.Observable;
 public class Timelinecontroller {
 
 
-    public TextField title_field;
-    public TextArea description_field;
+
     public ListView<Post> postList;
     public Button refresh_button;
     public Button Menu_button;
@@ -35,37 +34,8 @@ public class Timelinecontroller {
         //customize each cell of postList with new graphic object PostItem
         postList.setCellFactory(postList -> new PostItem());
     }
-//onja add nadarim ha. pak kon badesh
-    public void addPost(ActionEvent actionEvent) {
-        //set the post features
-        currentPost.setTitle(title_field.getText());
-        currentPost.setDescription(description_field.getText());
-        currentPost.setWriter("ali alavi");
 
-        //save the post in arraylist
-        posts.add(currentPost);
 
-        //show the arraylist in listview
-        postList.setItems(FXCollections.observableArrayList(posts));
-        postList.setCellFactory(postList -> new PostItem());
-
-        /*
-        if the listview cells are not customized and list view is made of strings
-        this code will add new post title to the list view
-        postList.getItems().add(currentPost.getTitle());
-         */
-
-        currentPost = new Post();
-
-        //empty fields
-        title_field.setText("");
-        description_field.setText("");
-    }
-
-    public void clear(ActionEvent actionEvent) {
-        title_field.setText("");
-        description_field.setText("");
-    }
 
 //check kon ino
     public void Refresh(ActionEvent actionEvent) {

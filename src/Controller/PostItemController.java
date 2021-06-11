@@ -104,6 +104,7 @@ public class PostItemController {
     }
     public void   view_comments(ActionEvent actionEvent){
         try {
+            showAllCommentscontroller.post=post;
             new PageLoader().load("showAllComments");
         } catch (IOException e) {
             e.printStackTrace();

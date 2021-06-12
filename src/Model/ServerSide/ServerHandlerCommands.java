@@ -165,6 +165,21 @@ public class ServerHandlerCommands {
         ans.put("answer",true);
         return ans;
     }
+    public static Map<String,Object> Addpost(Map<String,Object> map) {
+        Map<String,Object> ans = new HashMap<>();
+        String username=(String) map.get("username");
+        Profile profile = ServerMain.profiles.get(username);
+        Post posted =new Post();
+        posted=(Post) map.get("post");
+        posted.setCreatedTimeString(new Date());
+        posted.setCreatedTime(Instant.now().toEpochMilli());
+        ServerMain.AllPosts.add(posted);
+        ans.put("answer",true);
+        System.out.println("action: "+username+" posted "+ posted.getTitle());
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
 
 
 

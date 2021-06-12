@@ -83,6 +83,15 @@ public class ClientHandlerCommands {
     public static boolean logout(String username){
         Map<String,Object> toSendserver = new HashMap<>();
        toSendserver.put("username",username);
+       toSendserver.put("command",Command.LogOut);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (boolean) recieved.get("answer");
+    }
+    public static boolean Addpost(Post post,String username){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("post",post);
+        toSendserver.put("command",Command.AddPost);
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }

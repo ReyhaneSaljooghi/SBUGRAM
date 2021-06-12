@@ -7,14 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddPostcontroller">
    <children>
-      <TextField fx:id="title_field" layoutX="126.0" layoutY="35.0" />
-      <TextArea fx:id="descroption_field" layoutX="52.0" layoutY="72.0" prefHeight="200.0" prefWidth="297.0" />
+      <TextField fx:id="title_field" layoutX="126.0" layoutY="35.0" promptText="title" />
+      <TextArea fx:id="descroption_field" layoutX="52.0" layoutY="72.0" prefHeight="200.0" prefWidth="297.0" promptText="description" />
       <Button fx:id="browse_image_button" layoutX="159.0" layoutY="418.0" mnemonicParsing="false" onAction="#Browse_image" prefHeight="37.0" prefWidth="92.0" text="browse image" />
       <ImageView fx:id="image_view_field" fitHeight="114.0" fitWidth="137.0" layoutX="132.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="publish_button" layoutX="148.0" layoutY="476.0" mnemonicParsing="false" onAction="#Publish" prefHeight="47.0" prefWidth="115.0" text="Publisah" />
+      <Button fx:id="publish_button" layoutX="148.0" layoutY="476.0" mnemonicParsing="false" onAction="#Publish" prefHeight="47.0" prefWidth="115.0" text="Publish" />
       <Button fx:id="go2postlist_button" layoutX="161.0" layoutY="547.0" mnemonicParsing="false" onAction="#loadPostlist" text="go to post list" />
    </children>
 </Pane>

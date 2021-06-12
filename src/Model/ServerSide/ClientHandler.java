@@ -65,6 +65,9 @@ public class ClientHandler implements Runnable {
                     case LogOut:
                         answer=ServerHandlerCommands.logout(income);
                         break;
+                    case AddPost:
+                        answer=ServerHandlerCommands.Addpost(income);
+                        break;
 
                     default:
                         System.out.println("default");

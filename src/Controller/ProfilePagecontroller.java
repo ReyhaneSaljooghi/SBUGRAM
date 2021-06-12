@@ -22,7 +22,6 @@ public class ProfilePagecontroller {
     public  Label followers_label;
     public  Label name_label;
     public  Label username_label;
-    public  Label location_label;
     public  Label birthdate_label;
     public  Button follow_button;
     public Button block_button;
@@ -35,9 +34,10 @@ public class ProfilePagecontroller {
     public void initialize() {
 
        this.name_label.setText(profile.getName());
-
-        this.followers_label.setText(String.valueOf(profile.followings.size()));
+       this.followers_label.setText(String.valueOf(profile.followings.size()));
        this.username_label.setText(profile.getUserName());
+
+       this.birthdate_label.setText(profile.getBirthYear());
 
        if (profile.getProfileImage()!=null) {
            Image image = new Image(new ByteArrayInputStream(profile.getProfileImage()));
@@ -47,10 +47,8 @@ public class ProfilePagecontroller {
 
         postlist.setItems(FXCollections.observableArrayList(allPostsOfThisProfile));
 
-
-        //customize each cell of postList with new graphic object PostItem
         postlist.setCellFactory(postList -> new PostItem());
-        System.out.println("profile page controller6");
+
     }
 
     public void follow(ActionEvent actionEvent) {

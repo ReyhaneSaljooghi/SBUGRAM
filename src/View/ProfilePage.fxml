@@ -28,8 +28,7 @@
             <ImageView fx:id="imageview_field" fitHeight="120.0" fitWidth="119.0" layoutX="20.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="name_label" layoutX="225.0" layoutY="15.0" text="name and lastname" />
             <Label fx:id="username_label" layoutX="225.0" layoutY="50.0" prefHeight="17.0" prefWidth="104.0" text="username" />
-            <Label fx:id="location_label" layoutX="225.0" layoutY="93.0" prefHeight="17.0" prefWidth="104.0" text="location" />
-            <Label fx:id="birthdate_label" layoutX="225.0" layoutY="135.0" prefHeight="17.0" prefWidth="104.0" text="birth date" />
+            <Label fx:id="birthdate_label" layoutX="225.0" layoutY="89.0" prefHeight="17.0" prefWidth="104.0" text="birth year" />
             <Button fx:id="follow_button" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#follow" prefHeight="39.0" prefWidth="67.0" text="follow">
                <effect>
                   <Lighting>
@@ -66,8 +65,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Label layoutX="146.0" layoutY="135.0" prefHeight="17.0" prefWidth="55.0" text="birth date:" />
-            <Label layoutX="146.0" layoutY="93.0" prefHeight="17.0" prefWidth="55.0" text="location:" />
+            <Label layoutX="146.0" layoutY="89.0" prefHeight="17.0" prefWidth="55.0" text="birth year:" />
             <Label layoutX="146.0" layoutY="50.0" text="username:" />
             <Label layoutX="146.0" layoutY="15.0" prefHeight="17.0" prefWidth="55.0" text="name:" />
          </children></AnchorPane>

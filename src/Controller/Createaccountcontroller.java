@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.util.Duration;
@@ -35,13 +37,15 @@ public class Createaccountcontroller  {
     public TextField username_feild;
     public TextField password_field;
     public TextField phoneNum_field;
-    public javafx.scene.image.ImageView imageProfile;
+    public TextField birthyear_field;
+    public Circle circle;
+
     @FXML
     public void initialize() throws IOException {
        File file=new File("C:\\Users\\Saljooghi\\Desktop\\Project\\images\\istockphoto-922962354-612x612.jpg");
        Main.profileImage=Files.readAllBytes(file.toPath());
         Image image=new Image(new ByteArrayInputStream(Main.profileImage));
-        imageProfile.setImage(image);
+        circle.setFill(new ImagePattern(image));
     }
 
 
@@ -74,6 +78,7 @@ public class Createaccountcontroller  {
         ans.setName(name_feild.getText());
         ans.setPhoneNumber(phoneNum_field.getText());
         ans.setProfileImage(Main.profileImage);
+        ans.setBirthYear(birthyear_field.getText());
         return ans;
     }
 
@@ -86,7 +91,8 @@ public class Createaccountcontroller  {
         FileInputStream fileInputStream=new FileInputStream(file);
         Main.profileImage=fileInputStream.readAllBytes();
         Image image=new Image(new ByteArrayInputStream(Main.profileImage));
-        imageProfile.setImage(image);
+        circle.setFill(new ImagePattern(image));
+
     }
 
     public void sign_in(ActionEvent actionEvent) {

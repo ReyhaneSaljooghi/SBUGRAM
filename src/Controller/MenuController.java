@@ -25,6 +25,11 @@ public class MenuController {
     }
 
     public void go2NewPostPage(ActionEvent actionEvent) {
+        try {
+            new PageLoader().load("AddPost");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void gotoProfile(ActionEvent actionEvent) {

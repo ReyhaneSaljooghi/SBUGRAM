@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.paint.*?>
@@ -10,10 +11,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane id="style_field"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Createaccountcontroller">
+<Pane id="style_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Createaccountcontroller">
    <children>
-      <ImageView fx:id="imageProfile" fitHeight="120.0" fitWidth="134.0" layoutX="126.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="159.0" layoutY="358.0" mnemonicParsing="false" onAction="#browseImage" text="Set image">
+      <ImageView fx:id="imageProfile" fitHeight="86.0" fitWidth="90.0" layoutX="288.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="159.0" layoutY="388.0" mnemonicParsing="false" onAction="#browseImage" text="Set image">
          <effect>
             <InnerShadow />
          </effect></Button>
@@ -37,7 +38,7 @@
          <font>
             <Font name="Bodoni MT" size="13.0" />
          </font></Label>
-      <Button layoutX="141.0" layoutY="408.0" mnemonicParsing="false" onAction="#sign_up" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: gray;" text="Sign_up">
+      <Button layoutX="141.0" layoutY="429.0" mnemonicParsing="false" onAction="#sign_up" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: gray;" text="Sign_up">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -55,9 +56,12 @@
       <Label layoutX="34.0" layoutY="100.0" text="username" />
       <Label layoutX="34.0" layoutY="144.0" text="password" />
       <Label layoutX="34.0" layoutY="189.0" text="phonenumber" />
-      <Label layoutX="36.0" layoutY="252.0" text="profile image" />
+      <Label layoutX="36.0" layoutY="300.0" text="profile image" />
       <Label layoutX="69.0" layoutY="24.0" text="*" textFill="RED" />
       <Label layoutX="86.0" layoutY="100.0" text="*" textFill="RED" />
       <Label layoutX="86.0" layoutY="144.0" text="*" textFill="RED" />
+      <Label layoutX="37.0" layoutY="239.0" text="birth year:" />
+      <TextField fx:id="birthyear_field" layoutX="126.0" layoutY="235.0" prefHeight="25.0" prefWidth="134.0" promptText="birth year" />
+      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="193.0" layoutY="325.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

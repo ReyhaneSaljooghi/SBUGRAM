@@ -50,7 +50,6 @@
             </InnerShadow>
          </effect>
       </Button>
-      <ImageView fx:id="PosterProfileimage" fitHeight="101.0" fitWidth="107.0" layoutX="127.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="DateAndTimelabel" layoutX="105.0" layoutY="154.0" prefHeight="17.0" prefWidth="154.0" text="time" />
       <TextArea fx:id="post_description_area" layoutX="61.0" layoutY="181.0" prefHeight="67.0" prefWidth="238.0" />
       <Button fx:id="view_profile_button" layoutX="141.0" layoutY="446.0" mnemonicParsing="false" onAction="#view_profile" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: lightcyan;" text="view profile">
@@ -68,6 +67,7 @@
       <Label fx:id="numberOfreposts" layoutX="272.0" layoutY="372.0" text="Label" />
       <ImageView fx:id="postImageview" fitHeight="101.0" fitWidth="115.0" layoutX="124.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="like_imageView" fitHeight="26.0" fitWidth="28.0" layoutX="232.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60e8bf" height="4.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" width="362.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60e8bf" height="4.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" width="356.0" />
+      <Circle fx:id="circle" fill="#509e93" layoutX="178.0" layoutY="85.0" radius="56.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

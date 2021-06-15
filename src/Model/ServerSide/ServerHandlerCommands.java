@@ -109,6 +109,10 @@ public class ServerHandlerCommands {
         reposted.setCreatedTime(Instant.now().toEpochMilli());
         reposted.setPublisher(profile);
         ServerMain.AllPosts.add(reposted);
+        for (Post post:ServerMain.AllPosts){
+            if (post.equals((Post)(Post) income.get("post") ))
+                post.numberOfReposts++;
+        }
         ans.put("answer",new Boolean(true));
         System.out.println("action: "+username+" reposted "+reposted.getWriter()+" "+reposted.getTitle());
         System.out.println("at the time: "+ formatter.format(new Date()));
@@ -181,6 +185,52 @@ public class ServerHandlerCommands {
         return ans;
     }
 
+    public static Map<String,Object> follow(Map<String,Object> map) {
+        Map<String,Object> ans = new HashMap<>();
+        String follower=(String) map.get("follower");
+        Profile followerProfile = ServerMain.profiles.get(follower);
+        String following=(String) map.get("following");
+        Profile followingProfile = ServerMain.profiles.get(following);
+        followerProfile.followings.add(followingProfile);
+        followingProfile.followers.add(followerProfile);
+        ans.put("answer",true);
+        System.out.println("action: "+followerProfile.getUserName()+" followed "+ followingProfile.getUserName());
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
 
+    public static Map<String,Object> unfollow(Map<String,Object> map) {
+        Map<String,Object> ans = new HashMap<>();
+        String follower=(String) map.get("follower");
+        Profile followerProfile = ServerMain.profiles.get(follower);
+        String following=(String) map.get("following");
+        Profile followingProfile = ServerMain.profiles.get(following);
+        followerProfile.followings.remove(followingProfile);
+        followingProfile.followers.remove(followerProfile);
+        ans.put("answer",true);
+        System.out.println("action: "+followerProfile.getUserName()+" unfollowed "+ followingProfile.getUserName());
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
+
+    public static Map<String,Object> update(Map<String,Object> map) {
+        Map<String,Object> ans = new HashMap<>();
+        String username=(String) map.get("username");
+        Profile profile = ServerMain.profiles.get(username);
+        String newname=(String)map.get("name");
+        String newbirthyear=(String)map.get("birthyear");
+        profile.setName(newname);
+        profile.setBirthYear(newbirthyear);
+        ans.put("answer",profile);
+        System.out.println(profile.getName());
+        System.out.println(profile.getBirthYear());
+        System.out.println("action: "+username+" update her/his profile ");
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        return ans;
+
+    }
 
 }

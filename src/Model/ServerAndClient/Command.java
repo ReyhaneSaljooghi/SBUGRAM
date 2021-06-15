@@ -12,6 +12,9 @@ public enum Command {
     AddComment,
     GetAllProfiles,
     LogOut,
+    Follow,
+    UnFollow,
+    Update,
 
 
 }

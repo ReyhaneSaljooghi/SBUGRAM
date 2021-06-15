@@ -2,6 +2,7 @@ package Controller;
 
 import Model.ClientHandlerCommands;
 import Model.Main;
+import Model.PageLoader;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
 import javafx.collections.FXCollections;
@@ -14,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ProfilePagecontroller {
@@ -28,13 +30,21 @@ public class ProfilePagecontroller {
     public Button mute_button;
     public ListView<Post> postlist;
     public  ImageView imageview_field;
+    public Button unfollow_button1;
     ArrayList<Post> allPostsOfThisProfile = new ArrayList<>();
     Post thisPost = new Post();
     @FXML
     public void initialize() {
+        profile=ClientHandlerCommands.get_profile_by_Username(profile.getUsername());
+        if (ClientHandlerCommands.get_profile_by_Username(Main.currentusername).followings.contains(profile)){
+            unfollow_button1.setVisible(true);
+        }
+        else
+            follow_button.setVisible(true);
 
        this.name_label.setText(profile.getName());
-       this.followers_label.setText(String.valueOf(profile.followings.size()));
+       this.following_label.setText(String.valueOf(profile.followings.size()));
+       this.followers_label.setText(String.valueOf(profile.followers.size()));
        this.username_label.setText(profile.getUserName());
 
        this.birthdate_label.setText(profile.getBirthYear());
@@ -52,11 +62,26 @@ public class ProfilePagecontroller {
     }
 
     public void follow(ActionEvent actionEvent) {
+        ClientHandlerCommands.follow(Main.currentusername,profile.getUsername());
+        try {
+            new PageLoader().load("TimeLine");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void block(ActionEvent actionEvent) {
     }
 
     public void mute(ActionEvent actionEvent) {
+    }
+
+    public void unfollow(ActionEvent actionEvent) {
+        ClientHandlerCommands.unfollow(Main.currentusername,profile.getUsername());
+        try {
+            new PageLoader().load("TimeLine");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

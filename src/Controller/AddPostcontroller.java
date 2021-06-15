@@ -17,6 +17,7 @@ import javafx.stage.Popup;
 import javafx.util.Duration;
 
 import java.io.*;
+import java.nio.file.Files;
 
 public class AddPostcontroller {
     public TextField title_field;
@@ -34,9 +35,15 @@ public class AddPostcontroller {
         TranslateTransition t2 = new TranslateTransition(Duration.millis(1720), go2postlist_button);
         t2.setToY(-55);
         t2.playFromStart();
-        TranslateTransition t3 = new TranslateTransition(Duration.millis(2000), browse_image_button);
-        t3.setToX(+26);
-        t3.playFromStart();
+        File file=new File("images/noImage.jpg");
+        byte[]b= new byte[0];
+        try {
+            b = Files.readAllBytes(file.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Image image=new Image(new ByteArrayInputStream(b));
+        image_view_field.setImage(image);
     }
 
 

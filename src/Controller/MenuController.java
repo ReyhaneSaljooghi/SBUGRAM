@@ -33,6 +33,12 @@ public class MenuController {
     }
 
     public void gotoProfile(ActionEvent actionEvent) {
+        CurrentProfilePagecontroller.thisProfile=ClientHandlerCommands.get_profile_by_Username(Main.currentusername);
+        try {
+            new PageLoader().load("CurrentProfilePage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void followList_action(ActionEvent actionEvent)  {

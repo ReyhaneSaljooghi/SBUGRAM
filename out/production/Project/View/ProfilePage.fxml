@@ -29,7 +29,7 @@
             <Label fx:id="name_label" layoutX="225.0" layoutY="15.0" text="name and lastname" />
             <Label fx:id="username_label" layoutX="225.0" layoutY="50.0" prefHeight="17.0" prefWidth="104.0" text="username" />
             <Label fx:id="birthdate_label" layoutX="225.0" layoutY="89.0" prefHeight="17.0" prefWidth="104.0" text="birth year" />
-            <Button fx:id="follow_button" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#follow" prefHeight="39.0" prefWidth="67.0" text="follow">
+            <Button fx:id="follow_button" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#follow" prefHeight="39.0" prefWidth="67.0" text="follow" visible="false">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -68,6 +68,18 @@
             <Label layoutX="146.0" layoutY="89.0" prefHeight="17.0" prefWidth="55.0" text="birth year:" />
             <Label layoutX="146.0" layoutY="50.0" text="username:" />
             <Label layoutX="146.0" layoutY="15.0" prefHeight="17.0" prefWidth="55.0" text="name:" />
+            <Button fx:id="unfollow_button1" layoutX="67.0" layoutY="281.0" mnemonicParsing="false" onAction="#unfollow" prefHeight="39.0" prefWidth="67.0" text="unfollow" visible="false">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="398.0">
          <children>

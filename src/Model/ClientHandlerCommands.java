@@ -95,6 +95,35 @@ public class ClientHandlerCommands {
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }
+    public static boolean follow(String follower,String following){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("follower",follower);
+        toSendserver.put("following",following);
+        toSendserver.put("command",Command.Follow);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (boolean) recieved.get("answer");
+    }
+
+    public static boolean unfollow(String follower,String following){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("follower",follower);
+        toSendserver.put("following",following);
+        toSendserver.put("command",Command.UnFollow);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (boolean) recieved.get("answer");
+    }
+    public static Profile update(String name,String birthyear,String userame){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("name",name);
+        toSendserver.put("username",userame);
+        toSendserver.put("birthyear",birthyear);
+        toSendserver.put("command",Command.Update);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (Profile) recieved.get("answer");
+
+    }
+
+
 
 
 }

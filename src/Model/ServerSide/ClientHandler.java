@@ -68,6 +68,15 @@ public class ClientHandler implements Runnable {
                     case AddPost:
                         answer=ServerHandlerCommands.Addpost(income);
                         break;
+                    case Follow:
+                        answer=ServerHandlerCommands.follow(income);
+                        break;
+                    case UnFollow:
+                        answer=ServerHandlerCommands.unfollow(income);
+                        break;
+                    case Update:
+                        answer=ServerHandlerCommands.update(income);
+                        break;
 
                     default:
                         System.out.println("default");

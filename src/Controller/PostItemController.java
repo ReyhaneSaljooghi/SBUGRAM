@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
 import java.io.ByteArrayInputStream;
@@ -26,7 +27,7 @@ public class PostItemController {
     public Label numberOflikes;
     public Label numberOfreposts;
     public Label DateAndTimelabel;
-    public ImageView PosterProfileimage;
+    public Circle circle;
     public ImageView postImageview;
     public ImageView like_imageView;
     public TextArea post_description_area;
@@ -49,7 +50,7 @@ public class PostItemController {
         Image image;
         if (post.getPublisher().getProfileImage()!=null) {
             image = new Image(new ByteArrayInputStream(post.getPublisher().getProfileImage()));
-            PosterProfileimage.setImage(image);
+            circle.setFill(new ImagePattern(image));
         }
         if (post.getImageAttachedTopost()!=null){
             image = new Image(new ByteArrayInputStream(post.getImageAttachedTopost()));

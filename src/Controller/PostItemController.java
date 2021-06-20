@@ -115,7 +115,14 @@ public class PostItemController {
     public void  view_profile(ActionEvent actionEvent){
         ProfilePagecontroller.profile=post.getPublisher();
         try {
-            new PageLoader().load("ProfilePage");
+            if (!post.publisher.getUserName().equals(Main.currentusername)) {
+                ProfilePagecontroller.profile=post.getPublisher();
+                new PageLoader().load("ProfilePage");
+            }
+            else {
+                CurrentProfilePagecontroller.thisProfile=ClientHandlerCommands.get_profile_by_Username(Main.currentusername);
+                new PageLoader().load("CurrentProfilePage");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

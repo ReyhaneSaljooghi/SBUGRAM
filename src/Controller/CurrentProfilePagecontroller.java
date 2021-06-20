@@ -31,15 +31,13 @@ public class CurrentProfilePagecontroller {
     public Circle circle;
     public Label followings;
     public Label followers;
-    public ListView <Post>postlist;
+    public ListView<Post> postlist;
     ArrayList<Post> allPostsOfThisProfile = new ArrayList<>();
     Post thisPost = new Post();
 
     @FXML
     public void initialize() {
-        //thisProfile=ClientHandlerCommands.get_profile_by_Username(thisProfile.getUsername());
-        System.out.println(thisProfile.getBirthYear());
-        System.out.println(thisProfile.getName());
+        thisProfile = ClientHandlerCommands.get_profile_by_Username(thisProfile.getUsername());
 
         this.name_field.setText(thisProfile.getName());
         this.followings.setText(String.valueOf(thisProfile.followings.size()));
@@ -47,11 +45,11 @@ public class CurrentProfilePagecontroller {
         this.username_label.setText(thisProfile.getUserName());
         this.birthYear_field.setText(thisProfile.getBirthYear());
 
-        if (thisProfile.getProfileImage()!=null) {
+        if (thisProfile.getProfileImage() != null) {
             Image image = new Image(new ByteArrayInputStream(thisProfile.getProfileImage()));
-           circle.setFill(new ImagePattern(image));
+            circle.setFill(new ImagePattern(image));
         }
-        this.allPostsOfThisProfile= ClientHandlerCommands.givePostsOfcurrentUser(username_label.getText());
+        this.allPostsOfThisProfile = ClientHandlerCommands.givePostsOfcurrentUser(username_label.getText());
 
         this.postlist.setItems(FXCollections.observableArrayList(this.allPostsOfThisProfile));
 
@@ -60,14 +58,20 @@ public class CurrentProfilePagecontroller {
     }
 
     public void update(ActionEvent actionEvent) throws IOException {
-        String name=name_field.getText();
-        String year=birthYear_field.getText();
-        ClientHandlerCommands.update(name,year,Main.currentusername);
-        thisProfile.setBirthYear(year);
-        thisProfile.setName(name);
+        String name = name_field.getText();
+        String year = birthYear_field.getText();
+        ClientHandlerCommands.update(name, year, Main.currentusername);
         new PageLoader().load("CurrentProfilePage");
     }
 
-    public void deletAccount(ActionEvent actionEvent) {
+
+    public void deleteaccount(ActionEvent actionEvent) {
+        if (ClientHandlerCommands.deleteAccount(Main.currentusername)) {
+            try {
+                new PageLoader().load("SignInOut");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

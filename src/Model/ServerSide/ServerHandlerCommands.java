@@ -232,5 +232,31 @@ public class ServerHandlerCommands {
         return ans;
 
     }
+    public static Map<String,Object> deleteAccount(Map<String,Object> map){
+        Map<String,Object> ans = new HashMap<>();
+        String username=(String) map.get("username");
+        Profile profile = ServerMain.profiles.get(username);
+
+        for (Profile it:ServerMain.profiles.values()){
+            if (it.followings.contains(profile)){
+                it.followings.remove(profile);
+            }
+            if (it.followers.contains(profile)){
+                it.followers.remove(profile);
+            }
+        }
+
+        for (int i=ServerMain.AllPosts.size()-1;i>=0;i--){
+            if(ServerMain.AllPosts.get(i).publisher.equals(profile))
+                ServerMain.AllPosts.remove(i);
+        }
+
+       ServerMain.profiles.remove(username);
+        ans.put("answer",true);
+        System.out.println("action: "+username+" deleted account ");
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
 
 }

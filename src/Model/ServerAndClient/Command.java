@@ -15,6 +15,7 @@ public enum Command {
     Follow,
     UnFollow,
     Update,
+    DeleteAccount,
 
 
 }

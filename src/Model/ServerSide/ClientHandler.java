@@ -79,6 +79,9 @@ public class ClientHandler implements Runnable {
                     case Update:
                         answer=ServerHandlerCommands.update(income);
                         break;
+                    case DeleteAccount:
+                        answer=ServerHandlerCommands.deleteAccount(income);
+                        break;
 
                     default:
                         System.out.println("default");

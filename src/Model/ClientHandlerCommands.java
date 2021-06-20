@@ -124,6 +124,17 @@ public class ClientHandlerCommands {
 
     }
 
+    public static boolean deleteAccount(String username){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.DeleteAccount);
+
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+
+        return (boolean) received.get("answer");
+
+    }
+
 
 
 

@@ -54,7 +54,6 @@ public class LoginController {
         Profile profile = ClientHandlerCommands.sign_in(Main.currentusername,Main.currentpassword);
         if(profile == null){
             wrong_password_label.setVisible(true);
-            System.out.println("wrong pass");
             return;
         }
         else {

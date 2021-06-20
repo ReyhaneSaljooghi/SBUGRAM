@@ -23,7 +23,6 @@ public class Addcommentcontroller {
     public void releaseComment(ActionEvent actionEvent) {
 
         Comment newComment = new Comment(Main.currentusername, text_area_field.getText());
-        post.comments.add(newComment);
         ClientHandlerCommands.addcomment(newComment, post);
 
         try {

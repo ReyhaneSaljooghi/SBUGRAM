@@ -14,6 +14,6 @@
       <Button fx:id="browse_image_button" layoutX="159.0" layoutY="418.0" mnemonicParsing="false" onAction="#Browse_image" prefHeight="37.0" prefWidth="92.0" text="browse image" />
       <ImageView fx:id="image_view_field" fitHeight="114.0" fitWidth="137.0" layoutX="132.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="publish_button" layoutX="148.0" layoutY="476.0" mnemonicParsing="false" onAction="#Publish" prefHeight="47.0" prefWidth="115.0" text="Publish" />
-      <Button fx:id="go2postlist_button" layoutX="161.0" layoutY="547.0" mnemonicParsing="false" onAction="#loadPostlist" text="go to post list" />
+      <Button fx:id="go2postlist_button" layoutX="160.0" layoutY="561.0" mnemonicParsing="false" onAction="#loadPostlist" text="go to post list" />
    </children>
 </Pane>

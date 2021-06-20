@@ -29,11 +29,9 @@ public class AddPostcontroller {
     public byte[]image2set;
     @FXML
     public void initialize() {
-        TranslateTransition t = new TranslateTransition(Duration.millis(1600), publish_button);
-        t.setToY(-45);
-        t.playFromStart();
-        TranslateTransition t2 = new TranslateTransition(Duration.millis(1720), go2postlist_button);
-        t2.setToY(-55);
+
+        TranslateTransition t2 = new TranslateTransition(Duration.millis(1420), go2postlist_button);
+        t2.setToY(-20);
         t2.playFromStart();
         File file=new File("images/noImage.jpg");
         byte[]b= new byte[0];

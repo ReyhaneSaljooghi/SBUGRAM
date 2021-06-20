@@ -37,7 +37,7 @@ public class CurrentProfilePagecontroller {
 
     @FXML
     public void initialize() {
-        thisProfile=ClientHandlerCommands.get_profile_by_Username(thisProfile.getUsername());
+        //thisProfile=ClientHandlerCommands.get_profile_by_Username(thisProfile.getUsername());
         System.out.println(thisProfile.getBirthYear());
         System.out.println(thisProfile.getName());
 
@@ -62,7 +62,9 @@ public class CurrentProfilePagecontroller {
     public void update(ActionEvent actionEvent) throws IOException {
         String name=name_field.getText();
         String year=birthYear_field.getText();
-        thisProfile=ClientHandlerCommands.update(name,year,Main.currentusername);
+        ClientHandlerCommands.update(name,year,Main.currentusername);
+        thisProfile.setBirthYear(year);
+        thisProfile.setName(name);
         new PageLoader().load("CurrentProfilePage");
     }
 

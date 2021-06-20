@@ -5,11 +5,13 @@ import Model.ServerAndClient.Command;
 import Model.ServerAndClient.Comment;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
-
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.*;
+/*this class contains all methods for handling commands.
+ ClientHandler use this class.
+ all methods return a map which contains the information to be sent to the client*/
 
 public class ServerHandlerCommands {
    public static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -224,8 +226,6 @@ public class ServerHandlerCommands {
         profile.setName(newname);
         profile.setBirthYear(newbirthyear);
         ans.put("answer",profile);
-        System.out.println(profile.getName());
-        System.out.println(profile.getBirthYear());
         System.out.println("action: "+username+" update her/his profile ");
         System.out.println("at the time: "+ formatter.format(new Date()));
         DataBase.getDataBase().updateDB();

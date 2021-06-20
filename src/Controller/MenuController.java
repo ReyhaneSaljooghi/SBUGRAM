@@ -4,16 +4,18 @@ import Model.ClientHandlerCommands;
 import Model.Clientconnection;
 import Model.Main;
 import Model.PageLoader;
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 
 import java.io.IOException;
 
 public class MenuController {
-    public Button Go2Profile_button;
     public Button NewPost_button;
     public Button Logout_button;
     public Button follow_button;
+    ///public JFXButton JFxProfilebutton;
+    public Button profilebutton;
 
     public void LogOut(ActionEvent actionEvent) {
         ClientHandlerCommands.logout(Main.currentusername);

@@ -119,6 +119,7 @@ public class ClientHandlerCommands {
         toSendserver.put("birthyear",birthyear);
         toSendserver.put("command",Command.Update);
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        Profile p= (Profile) recieved.get("answer");
         return (Profile) recieved.get("answer");
 
     }

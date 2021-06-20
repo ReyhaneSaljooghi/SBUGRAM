@@ -8,6 +8,9 @@ import java.io.*;
 import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 
+/*this class update the resource file and add all changes
+serverHandlerCommands use the update method whenever it is necessary
+it is singleton because  just one object should exist for server  */
 public class DataBase {
     public static final String PROFILE_FILE = "Model/DB/profiles.bin";
     public static final String POSTS_FILE = "Model/DB/posts.bin";

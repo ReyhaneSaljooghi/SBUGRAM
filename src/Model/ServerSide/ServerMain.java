@@ -13,6 +13,9 @@ import java.nio.file.Files;
 import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+/*this is the main class in server side so it runs
+ and has a while loop to accept the clients.
+ it has all profiles and all posts*/
 
 public class ServerMain {
     public static final int PORT = 5056;

@@ -1,13 +1,15 @@
 package Model.ServerSide;
-
 import Model.ServerAndClient.Command;
-
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Map;
+
+/*This class is thread so it implements runnable.
+ it handles the commands and
+  finally sends the result to the client*/
 
 public class ClientHandler implements Runnable {
     private Socket userSocket;
@@ -85,6 +87,7 @@ public class ClientHandler implements Runnable {
                 }
                 if (answer==null)
                     System.out.println("answer is null before write object");
+                socketOut.reset();
                 socketOut.writeObject(answer);
                 socketOut.flush();
             }

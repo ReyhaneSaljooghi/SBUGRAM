@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,9 +9,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
    <children>
-      <Button fx:id="Go2Profile_button" layoutX="140.0" layoutY="180.0" mnemonicParsing="false" onAction="#gotoProfile" prefHeight="39.0" prefWidth="120.0" text="Profile" />
       <Button fx:id="NewPost_button" layoutX="140.0" layoutY="248.0" mnemonicParsing="false" onAction="#go2NewPostPage" prefHeight="39.0" prefWidth="120.0" text="New Post" />
       <Button fx:id="Logout_button" layoutX="159.0" layoutY="473.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="39.0" prefWidth="82.0" text="LOG OUT" />
       <Button fx:id="follow_button" layoutX="124.0" layoutY="323.0" mnemonicParsing="false" onAction="#followList_action" prefHeight="39.0" prefWidth="153.0" text="Look for people to follow" />
+      <Button fx:id="profilebutton" layoutX="139.0" layoutY="86.0" mnemonicParsing="false" onAction="#gotoProfile" prefHeight="25.0" prefWidth="120.0" text="profile" />
    </children>
 </Pane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" prefHeight="605.0" prefWidth="408.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="13.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="398.0" minWidth="385.0" prefWidth="398.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="617.0" prefWidth="398.0" style="-fx-background-color: lightgray;" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="sign_in_button" layoutX="132.0" layoutY="430.0" mnemonicParsing="false" onAction="#Sign_in_action" prefHeight="51.0" prefWidth="133.0" style="-fx-background-color: lightgray;" text="Sign In" textFill="#46b5a5">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <PasswordField fx:id="pass_word_feild" layoutX="126.0" layoutY="300.0" promptText="password" />
+            <TextField fx:id="username_feild" layoutX="126.0" layoutY="256.0" promptText="username" />
+            <Button fx:id="sign_up_button" layoutX="124.0" layoutY="540.0" mnemonicParsing="false" onAction="#Sign_up_action" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: lightgray;" text="Sign Up" textFill="#3bab91">
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Label fx:id="create_account_label" layoutX="128.0" layoutY="460.0" text="Don't have an account yet?" textFill="#444451" />
+            <Label fx:id="wrong_password_label" layoutX="154.0" layoutY="360.0" prefHeight="17.0" prefWidth="91.0" text="wrong password" visible="false" />
+            <Label fx:id="wrong_username_label" layoutX="153.0" layoutY="340.0" prefHeight="17.0" prefWidth="91.0" text="wrong username" visible="false" />
+            <ImageView blendMode="DARKEN" fitHeight="145.0" fitWidth="206.0" layoutX="90.0" layoutY="-11.0" pickOnBounds="true">
+               <effect>
+                  <Reflection />
+               </effect>
+               <image>
+                  <Image url="@../icone.jpg" />
+               </image>
+            </ImageView>
+            <TextField fx:id="password_visible" layoutX="127.0" layoutY="300.0" text="password" visible="false" />
+            <CheckBox fx:id="check_button" layoutX="31.0" layoutY="304.0" mnemonicParsing="false" onAction="#show_password" prefHeight="17.0" prefWidth="57.0" text="show " textFill="#04ebd4">
+               <effect>
+                  <Glow />
+               </effect>
+            </CheckBox>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

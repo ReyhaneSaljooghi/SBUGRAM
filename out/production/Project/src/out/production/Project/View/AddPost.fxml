@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddPostcontroller">
+   <children>
+      <TextArea fx:id="descroption_field" layoutX="52.0" layoutY="72.0" prefHeight="200.0" prefWidth="297.0" promptText="description" />
+      <ImageView fx:id="image_view_field" fitHeight="114.0" fitWidth="137.0" layoutX="132.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="go2postlist_button" layoutX="160.0" layoutY="544.0" mnemonicParsing="false" onAction="#loadPostlist" text="go to post list">
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <JFXTextField fx:id="title_field" layoutX="133.0" layoutY="34.0" promptText="title" />
+      <JFXButton layoutX="142.0" layoutY="417.0" onAction="#Browse_image" text="browse image" textFill="#38ab89">
+         <font>
+            <Font name="Bodoni MT Condensed" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="142.0" layoutY="477.0" onAction="#Publish" prefHeight="46.0" prefWidth="125.0" text="publish">
+         <font>
+            <Font name="Bodoni MT" size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</Pane>

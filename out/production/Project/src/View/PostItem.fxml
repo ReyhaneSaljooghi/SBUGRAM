@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" prefHeight="525.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="username_postitem" layoutX="14.0" layoutY="91.0" prefHeight="17.0" prefWidth="99.0" text="username" textFill="#95ebe4" />
+      <Label fx:id="title" layoutX="14.0" layoutY="35.0" prefHeight="17.0" prefWidth="112.0" text="title" />
+      <Button fx:id="view_comments_button" layoutX="132.0" layoutY="486.0" mnemonicParsing="false" onAction="#view_comments" style="-fx-background-color: lightcyan;" text="view comments">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button fx:id="Repost_button" layoutX="250.0" layoutY="486.0" mnemonicParsing="false" onAction="#Repost" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: lightcyan;" text="Repost">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button fx:id="Like_button" layoutX="148.0" layoutY="404.0" mnemonicParsing="false" onAction="#LikeAction" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: lightcyan;" text="Like">
+         <effect>
+            <DropShadow>
+               <input>
+                  <InnerShadow />
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="add_comments_button" layoutX="17.0" layoutY="486.0" mnemonicParsing="false" onAction="#add_comments" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: lightcyan;" text="add comment">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Label fx:id="DateAndTimelabel" layoutX="105.0" layoutY="154.0" prefHeight="17.0" prefWidth="154.0" text="time" />
+      <TextArea fx:id="post_description_area" layoutX="61.0" layoutY="181.0" prefHeight="67.0" prefWidth="238.0" />
+      <Button fx:id="view_profile_button" layoutX="141.0" layoutY="446.0" mnemonicParsing="false" onAction="#view_profile" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: lightcyan;" text="view profile">
+         <effect>
+            <DropShadow>
+               <input>
+                  <InnerShadow />
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Label layoutX="59.0" layoutY="373.0" prefHeight="17.0" prefWidth="35.0" text="Likes:" />
+      <Label fx:id="numberOflikes" layoutX="112.0" layoutY="373.0" prefHeight="17.0" prefWidth="41.0" text="Label" />
+      <Label layoutX="213.0" layoutY="372.0" prefHeight="17.0" prefWidth="52.0" text="reposts:" />
+      <Label fx:id="numberOfreposts" layoutX="272.0" layoutY="372.0" text="Label" />
+      <ImageView fx:id="postImageview" fitHeight="101.0" fitWidth="115.0" layoutX="124.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="like_imageView" fitHeight="26.0" fitWidth="28.0" layoutX="236.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60e8bf" height="4.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" width="356.0" />
+      <Circle fx:id="circle" fill="#509e93" layoutX="178.0" layoutY="85.0" radius="56.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

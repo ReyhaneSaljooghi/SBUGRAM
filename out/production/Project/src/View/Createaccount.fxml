@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane id="style_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Createaccountcontroller">
+   <children>
+      <Button layoutX="159.0" layoutY="388.0" mnemonicParsing="false" onAction="#browseImage" text="Set image">
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <TextField fx:id="name_feild" layoutX="126.0" layoutY="20.0" prefHeight="25.0" prefWidth="134.0" promptText="name" />
+      <TextField fx:id="lastname_field" layoutX="126.0" layoutY="56.0" prefHeight="25.0" prefWidth="134.0" promptText="last name" />
+      <TextField fx:id="username_feild" layoutX="126.0" layoutY="96.0" prefHeight="25.0" prefWidth="134.0" promptText="username" />
+      <TextField fx:id="password_field" layoutX="126.0" layoutY="140.0" prefHeight="25.0" prefWidth="134.0" promptText="password" />
+      <Button layoutX="167.0" layoutY="521.0" mnemonicParsing="false" onAction="#sign_in" style="-fx-background-color: gray;" text="Sign in">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#54bcba" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <effect>
+            <Reflection />
+         </effect></Button>
+      <Label layoutX="130.0" layoutY="493.0" prefHeight="17.0" prefWidth="127.0" text="Already have account?">
+         <font>
+            <Font name="Bodoni MT" size="13.0" />
+         </font></Label>
+      <Button layoutX="141.0" layoutY="429.0" mnemonicParsing="false" onAction="#sign_up" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: gray;" text="Sign_up">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#54bcba" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <effect>
+            <Reflection />
+         </effect></Button>
+      <TextField fx:id="phoneNum_field" layoutX="126.0" layoutY="185.0" prefHeight="25.0" prefWidth="134.0" promptText="phone number" />
+      <Label layoutX="34.0" layoutY="24.0" text="name" />
+      <Label layoutX="34.0" layoutY="60.0" text="last name" />
+      <Label layoutX="34.0" layoutY="100.0" text="username" />
+      <Label layoutX="34.0" layoutY="144.0" text="password" />
+      <Label layoutX="34.0" layoutY="189.0" text="phone number" />
+      <Label layoutX="36.0" layoutY="300.0" text="profile image" />
+      <Label layoutX="69.0" layoutY="24.0" text="*" textFill="RED" />
+      <Label layoutX="86.0" layoutY="100.0" text="*" textFill="RED" />
+      <Label layoutX="86.0" layoutY="144.0" text="*" textFill="RED" />
+      <Label layoutX="37.0" layoutY="239.0" text="birth year:" />
+      <TextField fx:id="birthyear_field" layoutX="126.0" layoutY="235.0" prefHeight="25.0" prefWidth="134.0" promptText="birth year" />
+      <Circle fx:id="circle" fill="#91c7c9" layoutX="193.0" layoutY="325.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</Pane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.34782608695652173" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Timelinecontroller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: gray;">
+         <children>
+            <Button fx:id="refresh_button" layoutX="165.0" layoutY="24.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="39.0" prefWidth="69.0" text="refresh" />
+            <Button fx:id="Menu_button" layoutX="167.0" layoutY="100.0" mnemonicParsing="false" onAction="#GotoMenu" prefHeight="39.0" prefWidth="69.0" text="Menu" />
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <ListView fx:id="postList" layoutX="14.0" layoutY="40.0" prefHeight="296.0" prefWidth="398.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

@@ -8,6 +8,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.Map;
 
+/*this class send and receive the information */
 public class Clientconnection
 {
     public static String serverAddress="localhost";
@@ -44,7 +45,6 @@ public class Clientconnection
         try{
             socketOutput.writeObject(toSend);
             socketOutput.flush();
-            //lazeme?????????????????
             socketOutput.reset();
             recieved = (Map<String,Object>) socketInput.readObject();
             return recieved;

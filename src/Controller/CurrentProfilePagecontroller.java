@@ -74,4 +74,12 @@ public class CurrentProfilePagecontroller {
             }
         }
     }
+
+    public void go2postList(ActionEvent actionEvent) {
+        try {
+            new PageLoader().load("TimeLine");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

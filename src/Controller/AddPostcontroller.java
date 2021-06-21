@@ -4,6 +4,7 @@ import Model.ClientHandlerCommands;
 import Model.Main;
 import Model.PageLoader;
 import Model.ServerAndClient.Post;
+import com.jfoenix.controls.JFXTextField;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,13 +21,14 @@ import java.io.*;
 import java.nio.file.Files;
 
 public class AddPostcontroller {
-    public TextField title_field;
+    
     public TextArea descroption_field;
-    public Button browse_image_button;
     public ImageView image_view_field;
     public Button publish_button;
     public Button go2postlist_button;
     public byte[]image2set;
+    public JFXTextField title_field;
+
     @FXML
     public void initialize() {
 

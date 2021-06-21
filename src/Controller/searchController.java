@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.ClientHandlerCommands;
+import Model.Main;
 import Model.PageLoader;
 import Model.ServerAndClient.Profile;
 import javafx.collections.FXCollections;
@@ -59,13 +60,16 @@ public class searchController implements Initializable {
 
     @FXML
     public void getProfile(MouseEvent mouseEvent) {
-        System.out.println("1");
 
-        System.out.println("2");
-        ProfilePagecontroller.profile = tableView.getSelectionModel().getSelectedItem();
         try {
-            System.out.println("3");
-            new PageLoader().load("ProfilePage");
+            if (!tableView.getSelectionModel().getSelectedItem().getUsername().equals(Main.currentusername)) {
+                ProfilePagecontroller.profile = tableView.getSelectionModel().getSelectedItem();
+                new PageLoader().load("ProfilePage");
+            }
+            else {
+                 CurrentProfilePagecontroller.thisProfile=ClientHandlerCommands.get_profile_by_Username(Main.currentusername);
+                new PageLoader().load("CurrentProfilePage");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

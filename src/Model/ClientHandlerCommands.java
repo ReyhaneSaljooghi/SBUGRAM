@@ -4,7 +4,8 @@ import Model.ServerAndClient.*;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
+/*this class contains all methods to send the command to the server and receive the answer
+* the return types are  different  but all the information is in map*/
 public class ClientHandlerCommands {
     public static Profile sign_in(String username, String password){
         Map<String,Object> tosendserver = new HashMap<>();
@@ -135,6 +136,24 @@ public class ClientHandlerCommands {
 
     }
 
+    public static boolean mute(String username,String muted){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.Mute);
+        toSendserver.put("muted",muted);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (boolean) received.get("answer");
+
+    }
+    public static boolean unMute(String username,String muted){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.UnMute);
+        toSendserver.put("unmuted",muted);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (boolean) received.get("answer");
+
+    }
 
 
 

@@ -16,6 +16,7 @@ public class MenuController {
     public Button follow_button;
     ///public JFXButton JFxProfilebutton;
     public Button profilebutton;
+    public JFXButton jfxbutton;
 
     public void LogOut(ActionEvent actionEvent) {
         ClientHandlerCommands.logout(Main.currentusername);
@@ -50,4 +51,7 @@ public class MenuController {
             e.printStackTrace();
         }
     }
+
+
+
 }

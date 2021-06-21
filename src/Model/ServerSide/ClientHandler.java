@@ -82,6 +82,12 @@ public class ClientHandler implements Runnable {
                     case DeleteAccount:
                         answer=ServerHandlerCommands.deleteAccount(income);
                         break;
+                    case Mute:
+                        answer=ServerHandlerCommands.mute(income);
+                        break;
+                    case UnMute:
+                        answer=ServerHandlerCommands.unMute(income);
+                        break;
 
                     default:
                         System.out.println("default");

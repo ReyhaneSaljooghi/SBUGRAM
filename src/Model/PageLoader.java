@@ -9,7 +9,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-
+/*there are some methods to handle loading pages in this class*/
 public class PageLoader {
     private static Stage stage;
     private static Scene scene;

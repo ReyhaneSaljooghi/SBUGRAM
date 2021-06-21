@@ -16,6 +16,6 @@ public enum Command {
     UnFollow,
     Update,
     DeleteAccount,
-
-
+    Mute,
+    UnMute,
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.5836120401337793" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfilePagecontroller">
+<SplitPane dividerPositions="0.6488294314381271" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfilePagecontroller">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="398.0">
          <children>
@@ -53,18 +54,6 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button fx:id="mute_button" layoutX="277.0" layoutY="281.0" mnemonicParsing="false" onAction="#mute" prefHeight="39.0" prefWidth="67.0" text="mute">
-               <effect>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect>
-            </Button>
             <Label layoutX="146.0" layoutY="89.0" prefHeight="17.0" prefWidth="55.0" text="birth year:" />
             <Label layoutX="146.0" layoutY="50.0" text="username:" />
             <Label layoutX="146.0" layoutY="15.0" prefHeight="17.0" prefWidth="55.0" text="name:" />
@@ -80,6 +69,9 @@
                   </Lighting>
                </effect>
             </Button>
+            <JFXButton fx:id="unmute_button" layoutX="285.0" layoutY="281.0" onAction="#unmute" prefHeight="39.0" prefWidth="67.0" text="unmute" visible="false" />
+            <JFXButton fx:id="mute_button1" layoutX="285.0" layoutY="281.0" onAction="#mute" prefHeight="39.0" prefWidth="67.0" text="mute" visible="false" />
+            <JFXButton layoutX="162.0" layoutY="339.0" onAction="#go2timeline" text="go to post list" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="398.0">
          <children>

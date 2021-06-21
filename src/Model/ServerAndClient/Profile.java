@@ -14,6 +14,7 @@ public class Profile implements Serializable {
     //add new
     public  ArrayList<Profile>followings=new ArrayList<>();
     public  ArrayList<Profile>followers=new ArrayList<>();
+    public  ArrayList<Profile>mutedUsers=new ArrayList<>();
     public Profile(String username){
         this.username =username;
     }

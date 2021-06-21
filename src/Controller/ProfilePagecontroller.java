@@ -5,6 +5,7 @@ import Model.Main;
 import Model.PageLoader;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,20 +28,28 @@ public class ProfilePagecontroller {
     public  Label birthdate_label;
     public  Button follow_button;
     public Button block_button;
-    public Button mute_button;
     public ListView<Post> postlist;
     public  ImageView imageview_field;
     public Button unfollow_button1;
+    public JFXButton unmute_button;
+    public JFXButton mute_button1;
     ArrayList<Post> allPostsOfThisProfile = new ArrayList<>();
     Post thisPost = new Post();
     @FXML
     public void initialize() {
         profile=ClientHandlerCommands.get_profile_by_Username(profile.getUsername());
-        if (ClientHandlerCommands.get_profile_by_Username(Main.currentusername).followings.contains(profile)){
+        Profile current=ClientHandlerCommands.get_profile_by_Username(Main.currentusername);
+        if (current.followings.contains(profile)){
             unfollow_button1.setVisible(true);
         }
         else
             follow_button.setVisible(true);
+        if (current.mutedUsers.contains(profile)) {
+            unmute_button.setVisible(true);
+        }
+        else {
+           mute_button1.setVisible(true);
+        }
 
        this.name_label.setText(profile.getName());
        this.following_label.setText(String.valueOf(profile.followings.size()));
@@ -74,10 +83,25 @@ public class ProfilePagecontroller {
     }
 
     public void mute(ActionEvent actionEvent) {
+        System.out.println("1");
+        ClientHandlerCommands.mute(Main.currentusername,profile.getUserName());
+        System.out.println("2");
     }
 
     public void unfollow(ActionEvent actionEvent) {
         ClientHandlerCommands.unfollow(Main.currentusername,profile.getUsername());
+        try {
+            new PageLoader().load("TimeLine");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void unmute(ActionEvent actionEvent) {
+        ClientHandlerCommands.unMute(Main.currentusername,profile.getUsername());
+    }
+
+    public void go2timeline(ActionEvent actionEvent) {
         try {
             new PageLoader().load("TimeLine");
         } catch (IOException e) {

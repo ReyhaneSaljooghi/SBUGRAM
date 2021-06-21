@@ -10,8 +10,8 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.*;
 /*this class contains all methods for handling commands.
- ClientHandler use this class.
- all methods return a map which contains the information to be sent to the client*/
+ClientHandler use this class.
+all methods return a map which contains the information to be sent to the client*/
 
 public class ServerHandlerCommands {
    public static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -81,6 +81,7 @@ public class ServerHandlerCommands {
         for(int i=0;i<ServerMain.AllPosts.size();i++){
             if (profile.followings.contains((ServerMain.AllPosts.get(i)).getPublisher())||
                     (ServerMain.AllPosts.get(i)).getPublisher().equals(profile)){
+                if(!profile.mutedUsers.contains(ServerMain.AllPosts.get(i).getPublisher()))
                 CurrentUserposts.add(ServerMain.AllPosts.get(i));
             }
         }
@@ -256,6 +257,32 @@ public class ServerHandlerCommands {
         System.out.println("action: "+username+" deleted account ");
         System.out.println("at the time: "+ formatter.format(new Date()));
         DataBase.getDataBase().updateDB();
+        return ans;
+    }
+
+    public static Map<String,Object>mute(Map<String,Object> map){
+        Map<String,Object> ans = new HashMap<>();
+        String username=(String) map.get("username");
+        Profile profile = ServerMain.profiles.get(username);
+        Profile muted=ServerMain.profiles.get(map.get("muted"));
+        profile.mutedUsers.add(muted);
+        System.out.println("action: "+username+" muted "+muted.getUsername());
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        ans.put("answer",true);
+        return ans;
+    }
+
+    public static Map<String,Object>unMute(Map<String,Object> map){
+        Map<String,Object> ans = new HashMap<>();
+        String username=(String) map.get("username");
+        Profile profile = ServerMain.profiles.get(username);
+        Profile muted=ServerMain.profiles.get(map.get("unmuted"));
+        profile.mutedUsers.remove(muted);
+        System.out.println("action: "+username+" unmuted "+muted.getUsername());
+        System.out.println("at the time: "+ formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        ans.put("answer",true);
         return ans;
     }
 

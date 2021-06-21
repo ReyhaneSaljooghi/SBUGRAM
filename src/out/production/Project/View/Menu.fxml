@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,9 +12,34 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
    <children>
-      <Button fx:id="NewPost_button" layoutX="140.0" layoutY="248.0" mnemonicParsing="false" onAction="#go2NewPostPage" prefHeight="39.0" prefWidth="120.0" text="New Post" />
-      <Button fx:id="Logout_button" layoutX="159.0" layoutY="473.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="39.0" prefWidth="82.0" text="LOG OUT" />
-      <Button fx:id="follow_button" layoutX="124.0" layoutY="323.0" mnemonicParsing="false" onAction="#followList_action" prefHeight="39.0" prefWidth="153.0" text="Look for people to follow" />
-      <Button fx:id="profilebutton" layoutX="139.0" layoutY="86.0" mnemonicParsing="false" onAction="#gotoProfile" prefHeight="25.0" prefWidth="120.0" text="profile" />
+      <Button fx:id="Logout_button" layoutX="159.0" layoutY="473.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="39.0" prefWidth="82.0" text="LOG OUT" textFill="#389074">
+         <font>
+            <Font name="Berlin Sans FB" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <JFXButton buttonType="RAISED" layoutX="140.0" layoutY="166.0" onAction="#gotoProfile" prefHeight="39.0" prefWidth="120.0" text="profile" textFill="#3f9494" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="141.0" layoutY="240.0" onAction="#go2NewPostPage" prefHeight="39.0" prefWidth="120.0" text="new post" textFill="#328a69" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" graphicTextGap="9.0" layoutX="72.0" layoutY="314.0" onAction="#followList_action" prefHeight="39.0" prefWidth="258.0" text="look for people to follow" textFill="#307c80">
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </Pane>

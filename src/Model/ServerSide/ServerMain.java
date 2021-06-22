@@ -32,6 +32,9 @@ public class ServerMain {
     public static void main(String[] args) throws IOException {
 
      DataBase.getDataBase().loadfirst();
+
+
+
      ServerSocket ss = null;
         try {
             ss = new ServerSocket(PORT);

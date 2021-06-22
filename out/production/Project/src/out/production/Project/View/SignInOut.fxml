@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -21,7 +22,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="617.0" prefWidth="398.0" style="-fx-background-color: lightgray;" GridPane.rowIndex="1">
+      <Pane prefHeight="595.0" prefWidth="0.0" style="-fx-background-color: lightgray;" GridPane.rowIndex="1">
          <children>
             <Button fx:id="sign_in_button" layoutX="132.0" layoutY="430.0" mnemonicParsing="false" onAction="#Sign_in_action" prefHeight="51.0" prefWidth="133.0" style="-fx-background-color: lightgray;" text="Sign In" textFill="#46b5a5">
                <font>
@@ -31,12 +32,13 @@
                   <DropShadow />
                </effect>
             </Button>
-            <PasswordField fx:id="pass_word_feild" layoutX="126.0" layoutY="300.0" promptText="password" />
-            <TextField fx:id="username_feild" layoutX="126.0" layoutY="256.0" promptText="username" />
-            <Button fx:id="sign_up_button" layoutX="124.0" layoutY="540.0" mnemonicParsing="false" onAction="#Sign_up_action" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: lightgray;" text="Sign Up" textFill="#3bab91">
+            <PasswordField fx:id="pass_word_feild" layoutX="126.0" layoutY="280.0" promptText="password" />
+            <TextField fx:id="username_feild" layoutX="126.0" layoutY="245.0" promptText="username" />
+            <Button fx:id="sign_up_button" layoutX="124.0" layoutY="536.0" mnemonicParsing="false" onAction="#Sign_up_action" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: lightgray;" text="Sign Up" textFill="#3bab91">
                <effect>
                   <DropShadow />
-               </effect></Button>
+               </effect>
+            </Button>
             <Label fx:id="create_account_label" layoutX="128.0" layoutY="460.0" text="Don't have an account yet?" textFill="#444451" />
             <Label fx:id="wrong_password_label" layoutX="154.0" layoutY="360.0" prefHeight="17.0" prefWidth="91.0" text="wrong password" visible="false" />
             <Label fx:id="wrong_username_label" layoutX="153.0" layoutY="340.0" prefHeight="17.0" prefWidth="91.0" text="wrong username" visible="false" />
@@ -54,6 +56,7 @@
                   <Glow />
                </effect>
             </CheckBox>
+            <JFXButton fx:id="forgetbutton" buttonType="RAISED" layoutX="154.0" layoutY="315.0" onAction="#forgetPass" text="forget password" textFill="#1e5452" />
          </children>
       </Pane>
    </children>

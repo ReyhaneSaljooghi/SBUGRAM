@@ -85,4 +85,12 @@ public class LoginController {
             pass_word_feild.setText(password_visible.getText());
         }
     }
+
+    public void forgetPass(ActionEvent actionEvent) {
+        try {
+            new PageLoader().load("ForgetPassword");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

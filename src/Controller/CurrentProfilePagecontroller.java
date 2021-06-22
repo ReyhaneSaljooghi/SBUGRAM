@@ -20,7 +20,8 @@ import javafx.scene.shape.Circle;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-
+/*this is the controller for the current profile page
+* so it has update button */
 public class CurrentProfilePagecontroller {
     public static Profile thisProfile;
     public Label username_label;

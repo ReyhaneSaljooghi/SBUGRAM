@@ -19,7 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-
+/* this is the controller for each post */
 public class PostItemController {
     public AnchorPane root;
     public Label username_postitem;

@@ -18,4 +18,7 @@ public enum Command {
     DeleteAccount,
     Mute,
     UnMute,
+    GetPassword,
+    Block,
+    UnBlock,
 }

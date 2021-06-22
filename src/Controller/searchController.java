@@ -10,6 +10,7 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -20,7 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
+/*this class control Search to follow fxml file.
+* it gets all profiles from the server and load them for the client*/
 public class searchController implements Initializable {
 
 
@@ -62,7 +64,13 @@ public class searchController implements Initializable {
     public void getProfile(MouseEvent mouseEvent) {
 
         try {
-            if (!tableView.getSelectionModel().getSelectedItem().getUsername().equals(Main.currentusername)) {
+            if (tableView.getSelectionModel().getSelectedItem().blockedUsers.contains
+                    (ClientHandlerCommands.get_profile_by_Username(Main.currentusername))){
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"This user has blocked you!");
+                alert.showAndWait();
+                return;
+            }
+            else if (!tableView.getSelectionModel().getSelectedItem().getUsername().equals(Main.currentusername)) {
                 ProfilePagecontroller.profile = tableView.getSelectionModel().getSelectedItem();
                 new PageLoader().load("ProfilePage");
             }

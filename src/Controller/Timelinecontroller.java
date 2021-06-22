@@ -1,5 +1,4 @@
 package Controller;
-
 import Model.ClientHandlerCommands;
 import Model.Main;
 import Model.PageLoader;
@@ -10,10 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Observable;
+
+/*this is the controller of timeline fxml file*/
 
 public class Timelinecontroller {
 

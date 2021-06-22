@@ -18,7 +18,7 @@ import javafx.scene.image.ImageView;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-
+/*this class control each post item */
 public class ProfilePagecontroller {
     public static Profile profile;
     public  Label following_label;
@@ -27,12 +27,13 @@ public class ProfilePagecontroller {
     public  Label username_label;
     public  Label birthdate_label;
     public  Button follow_button;
-    public Button block_button;
     public ListView<Post> postlist;
     public  ImageView imageview_field;
     public Button unfollow_button1;
     public JFXButton unmute_button;
     public JFXButton mute_button1;
+    public JFXButton unblock_button;
+    public JFXButton block_button;
     ArrayList<Post> allPostsOfThisProfile = new ArrayList<>();
     Post thisPost = new Post();
     @FXML
@@ -49,6 +50,12 @@ public class ProfilePagecontroller {
         }
         else {
            mute_button1.setVisible(true);
+        }
+        if (current.blockedUsers.contains(profile)) {
+            unblock_button.setVisible(true);
+        }
+        else {
+           block_button.setVisible(true);
         }
 
        this.name_label.setText(profile.getName());
@@ -80,12 +87,20 @@ public class ProfilePagecontroller {
     }
 
     public void block(ActionEvent actionEvent) {
+        ClientHandlerCommands.block(Main.currentusername,profile.getUsername());
+
+    }
+    public void unblock(ActionEvent actionEvent) {
+        ClientHandlerCommands.unBlock(Main.currentusername,profile.getUsername());
     }
 
     public void mute(ActionEvent actionEvent) {
-        System.out.println("1");
+
         ClientHandlerCommands.mute(Main.currentusername,profile.getUserName());
-        System.out.println("2");
+
+    }
+    public void unmute(ActionEvent actionEvent) {
+        ClientHandlerCommands.unMute(Main.currentusername,profile.getUsername());
     }
 
     public void unfollow(ActionEvent actionEvent) {
@@ -97,9 +112,6 @@ public class ProfilePagecontroller {
         }
     }
 
-    public void unmute(ActionEvent actionEvent) {
-        ClientHandlerCommands.unMute(Main.currentusername,profile.getUsername());
-    }
 
     public void go2timeline(ActionEvent actionEvent) {
         try {
@@ -108,4 +120,6 @@ public class ProfilePagecontroller {
             e.printStackTrace();
         }
     }
+
+
 }

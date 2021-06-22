@@ -20,11 +20,11 @@
             <Label layoutX="174.0" layoutY="114.0" text="birthyear:" />
             <TextField fx:id="birthYear_field" layoutX="240.0" layoutY="110.0" prefHeight="25.0" prefWidth="135.0" promptText="birthYear" />
             <TextField fx:id="name_field" layoutX="240.0" layoutY="25.0" prefHeight="25.0" prefWidth="135.0" promptText="name" />
-            <Button fx:id="update_button" layoutX="50.0" layoutY="236.0" mnemonicParsing="false" onAction="#update" prefHeight="37.0" prefWidth="120.0" text="Update info">
+            <Button fx:id="update_button" layoutX="47.0" layoutY="229.0" mnemonicParsing="false" onAction="#update" prefHeight="37.0" prefWidth="120.0" text="Update info">
                <font>
                   <Font name="Copperplate Gothic Light" size="12.0" />
                </font></Button>
-            <Button fx:id="deleteaccount_button" layoutX="240.0" layoutY="236.0" mnemonicParsing="false" onAction="#deleteaccount" prefHeight="37.0" prefWidth="120.0" text="Delete account">
+            <Button fx:id="deleteaccount_button" layoutX="240.0" layoutY="229.0" mnemonicParsing="false" onAction="#deleteaccount" prefHeight="37.0" prefWidth="120.0" text="Delete account">
                <font>
                   <Font name="Copperplate Gothic Light" size="12.0" />
                </font></Button>
@@ -33,7 +33,7 @@
             <Label layoutX="236.0" layoutY="182.0" text="followers:" />
             <Label fx:id="followers" layoutX="308.0" layoutY="182.0" text="Label" />
             <Circle fx:id="circle" fill="DODGERBLUE" layoutX="76.0" layoutY="90.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
-            <JFXButton buttonType="RAISED" layoutX="162.0" layoutY="281.0" onAction="#go2postList" text="go to post list" textFill="#47badd">
+            <JFXButton buttonType="RAISED" layoutX="158.0" layoutY="275.0" onAction="#go2postList" text="go to post list" textFill="#47badd">
                <font>
                   <Font name="Book Antiqua" size="12.0" />
                </font>

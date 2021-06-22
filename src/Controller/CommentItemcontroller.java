@@ -13,7 +13,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-
+/*this class control each comment item*/
 public class CommentItemcontroller {
     public AnchorPane root;
     public TextArea commentText_area;

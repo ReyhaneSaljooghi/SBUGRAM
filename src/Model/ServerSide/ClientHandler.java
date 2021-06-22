@@ -88,6 +88,15 @@ public class ClientHandler implements Runnable {
                     case UnMute:
                         answer=ServerHandlerCommands.unMute(income);
                         break;
+                    case GetPassword:
+                        answer=ServerHandlerCommands.checkEmail(income);
+                        break;
+                    case Block:
+                        answer=ServerHandlerCommands.block(income);
+                        break;
+                    case UnBlock:
+                        answer=ServerHandlerCommands.unBlock(income);
+                        break;
 
                     default:
                         System.out.println("default");

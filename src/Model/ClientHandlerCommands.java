@@ -155,6 +155,34 @@ public class ClientHandlerCommands {
 
     }
 
+    public static boolean getPass(String username,String email){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.GetPassword);
+        toSendserver.put("email",email);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (boolean) received.get("answer");
+
+    }
+
+    public static boolean block(String username,String blocked){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.Block);
+        toSendserver.put("blocked",blocked);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (boolean) received.get("answer");
+
+    }
+    public static boolean unBlock(String username,String unblocked){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.UnBlock);
+        toSendserver.put("unblocked",unblocked);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (boolean) received.get("answer");
+
+    }
 
 
 }

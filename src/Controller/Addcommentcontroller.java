@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 import java.io.IOException;
-
+/*this is the controller of add comment fxml file*/
 public class Addcommentcontroller {
     public TextArea text_area_field;
     public Button comment_button;

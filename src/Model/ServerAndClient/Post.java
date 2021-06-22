@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Vector;
-
+/*this class contains all information for a post
+* it implements serializable
+* so it has a serialVersionUID */
 public class Post implements Comparable<Post>, Serializable {
     private static final long serialVersionUID= 5032982360233766940L;
 

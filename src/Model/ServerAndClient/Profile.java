@@ -2,6 +2,10 @@ package Model.ServerAndClient;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+/*this class contains all information about a user
+* we have an object of this class for each use
+* it implements serializable in order to be serialized
+* the equal method is based on username bcz the username is unique */
 
 public class Profile implements Serializable {
     private static final long serialVersionUID = -7523282726772266610L;
@@ -10,11 +14,13 @@ public class Profile implements Serializable {
     private String name;
     private String birthYear;
     private String phoneNumber;
+    private String email;
     byte[] profileImage;
-    //add new
+
     public  ArrayList<Profile>followings=new ArrayList<>();
     public  ArrayList<Profile>followers=new ArrayList<>();
     public  ArrayList<Profile>mutedUsers=new ArrayList<>();
+    public  ArrayList<Profile>blockedUsers=new ArrayList<>();
     public Profile(String username){
         this.username =username;
     }
@@ -29,6 +35,14 @@ public class Profile implements Serializable {
 
     public String getUsername() {
         return username;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override

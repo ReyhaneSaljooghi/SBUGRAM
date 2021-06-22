@@ -39,6 +39,7 @@ public class Createaccountcontroller  {
     public TextField phoneNum_field;
     public TextField birthyear_field;
     public Circle circle;
+    public TextField email_text_field;
 
     @FXML
     public void initialize() throws IOException {
@@ -79,6 +80,7 @@ public class Createaccountcontroller  {
         ans.setPhoneNumber(phoneNum_field.getText());
         ans.setProfileImage(Main.profileImage);
         ans.setBirthYear(birthyear_field.getText());
+        ans.setEmail(email_text_field.getText());
         return ans;
     }
 
@@ -106,6 +108,7 @@ public class Createaccountcontroller  {
         if ( username_feild.getText().isEmpty()
                 || password_field.getText().isEmpty()
                 || name_feild.getText().isEmpty()
+                || email_text_field.getText().isEmpty()
         ) {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Fill out the necessary fields!");
             alert.showAndWait();

@@ -16,9 +16,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
+import javafx.stage.Popup;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 /*this is the controller for the current profile page
 * so it has update button */
@@ -33,6 +34,7 @@ public class CurrentProfilePagecontroller {
     public Label followings;
     public Label followers;
     public ListView<Post> postlist;
+    public byte[]newImage;
     ArrayList<Post> allPostsOfThisProfile = new ArrayList<>();
     Post thisPost = new Post();
 
@@ -50,7 +52,7 @@ public class CurrentProfilePagecontroller {
             Image image = new Image(new ByteArrayInputStream(thisProfile.getProfileImage()));
             circle.setFill(new ImagePattern(image));
         }
-        this.allPostsOfThisProfile = ClientHandlerCommands.givePostsOfcurrentUser(username_label.getText());
+        this.allPostsOfThisProfile = ClientHandlerCommands.givePersonalPostsOfcurrentUser(username_label.getText());
 
         this.postlist.setItems(FXCollections.observableArrayList(this.allPostsOfThisProfile));
 
@@ -61,7 +63,7 @@ public class CurrentProfilePagecontroller {
     public void update(ActionEvent actionEvent) throws IOException {
         String name = name_field.getText();
         String year = birthYear_field.getText();
-        ClientHandlerCommands.update(name, year, Main.currentusername);
+        ClientHandlerCommands.update(name, year,Main.profileImage, Main.currentusername);
         new PageLoader().load("CurrentProfilePage");
     }
 
@@ -82,5 +84,18 @@ public class CurrentProfilePagecontroller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void browseImage(ActionEvent actionEvent) throws IOException {
+        FileChooser fileChooser=new FileChooser() ;
+        File file=fileChooser.showOpenDialog(new Popup());
+        if (file==null){
+            return;
+        }
+        FileInputStream fileInputStream=new FileInputStream(file);
+        Main.profileImage=fileInputStream.readAllBytes();
+        newImage=fileInputStream.readAllBytes();
+        Image image=new Image(new ByteArrayInputStream(Main.profileImage));
+        circle.setFill(new ImagePattern(image));
     }
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.searchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.searchController">
    <children>
       <TableView fx:id="tableView" layoutX="81.0" layoutY="167.0" onMouseClicked="#getProfile" prefHeight="392.0" prefWidth="239.0">
         <columns>
@@ -15,7 +16,10 @@
           <TableColumn fx:id="name_column" prefWidth="118.0" text="name" />
         </columns>
       </TableView>
-      <TextField fx:id="filtered_field" layoutX="126.0" layoutY="71.0" />
-      <Label layoutX="51.0" layoutY="75.0" text="search" />
+      <JFXTextField fx:id="filtered_field" focusColor="#93d2e1" layoutX="133.0" layoutY="71.0" promptText="search" style="-fx-border-radius: 15;" unFocusColor="#61dac2">
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </JFXTextField>
    </children>
 </AnchorPane>

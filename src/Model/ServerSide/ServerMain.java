@@ -32,8 +32,9 @@ public class ServerMain {
     public static void main(String[] args) throws IOException {
 
      DataBase.getDataBase().loadfirst();
-
-
+     System.out.println(profiles);
+     AllPosts.clear();
+     DataBase.getDataBase().updateDB();
 
      ServerSocket ss = null;
         try {

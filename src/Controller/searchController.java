@@ -4,6 +4,7 @@ import Model.ClientHandlerCommands;
 import Model.Main;
 import Model.PageLoader;
 import Model.ServerAndClient.Profile;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -30,7 +31,8 @@ public class searchController implements Initializable {
     public TableColumn<Profile, String> username_column;
     public TableColumn<Profile, String> name_column;
     private final ObservableList<Profile> allProfile = FXCollections.observableArrayList();
-    public TextField filtered_field;
+    public JFXTextField filtered_field;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

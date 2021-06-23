@@ -33,12 +33,13 @@ public class PostItemController {
     public TextArea post_description_area;
     public Button view_profile_button;
     public Button Like_button;
+
     public Button add_comments_button;
     Post post;
 
     //each list item will have its exclusive controller in runtime so we set the controller as we load the fxml
     public PostItemController(Post post) throws IOException {
-        new PageLoader().load("postItem", this);
+        new PageLoader().load("PostItem", this);
         this.post = post;
     }
 

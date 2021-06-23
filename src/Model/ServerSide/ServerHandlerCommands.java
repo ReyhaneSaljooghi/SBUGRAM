@@ -100,7 +100,32 @@ public class ServerHandlerCommands {
             postAnswer.add(CurrentUserposts.get(i));
         }
         ans.put("answer", postAnswer);
+        System.out.println(thisusername+ " get posts list ");
+        System.out.println("at the time: " + formatter.format(new Date()));
         //DataBase.getDataBase().updateDB();
+
+        return ans;
+
+    }
+    public static Map<String, Object> personalPost(Map<String, Object> income) {
+        String thisusername = (String) income.get("username");
+        Profile profile = ServerMain.profiles.get(thisusername);
+        Map<String, Object> ans = new HashMap<>();
+        List<Post> CurrentUserposts = new ArrayList<>();
+        for (int i = 0; i < ServerMain.AllPosts.size(); i++) {
+            if ((ServerMain.AllPosts.get(i)).getPublisher().equals(profile)) {
+                CurrentUserposts.add(ServerMain.AllPosts.get(i));
+            }
+        }
+        if (CurrentUserposts == null)
+            System.out.println("haji nulle ");
+        List<Post> postAnswer = new ArrayList<>();
+        for (int i=CurrentUserposts.size()-1;i>=0;i--){
+            postAnswer.add(CurrentUserposts.get(i));
+        }
+        ans.put("answer", postAnswer);
+        System.out.println(thisusername+ " get posts list ");
+        System.out.println("at the time: " + formatter.format(new Date()));
 
         return ans;
 
@@ -112,6 +137,8 @@ public class ServerHandlerCommands {
         Profile profile = ServerMain.profiles.get(username);
         ans.put("answer", profile);
         DataBase.getDataBase().updateDB();
+        System.out.println(username+ " get info ");
+        System.out.println("at the time: " + formatter.format(new Date()));
         return ans;
     }
 
@@ -196,6 +223,7 @@ public class ServerHandlerCommands {
         Profile profile = ServerMain.profiles.get(username);
         Post posted = new Post();
         posted = (Post) map.get("post");
+        posted.setPublisher(profile);
         posted.setCreatedTimeString(new Date());
         posted.setCreatedTime(Instant.now().toEpochMilli());
         ServerMain.AllPosts.add(posted);
@@ -242,8 +270,10 @@ public class ServerHandlerCommands {
         Profile profile = ServerMain.profiles.get(username);
         String newname = (String) map.get("name");
         String newbirthyear = (String) map.get("birthyear");
+        byte[]image=(byte[])map.get("image");
         profile.setName(newname);
         profile.setBirthYear(newbirthyear);
+        profile.setProfileImage(image);
         ans.put("answer", profile);
         System.out.println("action: " + username + " update her/his profile ");
         System.out.println("at the time: " + formatter.format(new Date()));

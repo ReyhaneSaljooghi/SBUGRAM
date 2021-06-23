@@ -6,6 +6,7 @@ public enum Command {
     AddPost,
     UsernameExist,
     GetAllposts,
+    GetPersonalPost,
     getProfileByUsername,
     Repost,
     Like,

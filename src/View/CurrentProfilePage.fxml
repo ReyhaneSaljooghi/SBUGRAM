@@ -41,12 +41,13 @@
             <Label fx:id="followings" layoutX="124.0" layoutY="182.0" text="Label" />
             <Label layoutX="236.0" layoutY="182.0" text="followers:" textFill="#45ab9c" />
             <Label fx:id="followers" layoutX="308.0" layoutY="182.0" text="Label" />
-            <Circle fx:id="circle" fill="DODGERBLUE" layoutX="76.0" layoutY="90.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle" fill="DODGERBLUE" layoutX="64.0" layoutY="73.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
             <JFXButton buttonType="RAISED" layoutX="158.0" layoutY="275.0" onAction="#go2postList" text="go to post list" textFill="#47badd">
                <font>
                   <Font name="Book Antiqua" size="12.0" />
                </font>
             </JFXButton>
+            <JFXButton layoutX="38.0" layoutY="135.0" onAction="#browseImage" text="browse" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>

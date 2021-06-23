@@ -14,10 +14,19 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="303.0" prefWidth="398.0">
          <children>
-            <Label layoutX="174.0" layoutY="29.0" text="name:" />
-            <Label layoutX="174.0" layoutY="73.0" text="username:" />
+            <Label layoutX="174.0" layoutY="29.0" text="name:">
+               <font>
+                  <Font name="Eras Bold ITC" size="12.0" />
+               </font></Label>
+            <Label layoutX="174.0" layoutY="73.0" text="username:">
+               <font>
+                  <Font name="Eras Bold ITC" size="12.0" />
+               </font></Label>
             <Label fx:id="username_label" layoutX="286.0" layoutY="73.0" text="Label" />
-            <Label layoutX="174.0" layoutY="114.0" text="birthyear:" />
+            <Label layoutX="174.0" layoutY="114.0" text="birthyear:">
+               <font>
+                  <Font name="Eras Bold ITC" size="12.0" />
+               </font></Label>
             <TextField fx:id="birthYear_field" layoutX="240.0" layoutY="110.0" prefHeight="25.0" prefWidth="135.0" promptText="birthYear" />
             <TextField fx:id="name_field" layoutX="240.0" layoutY="25.0" prefHeight="25.0" prefWidth="135.0" promptText="name" />
             <Button fx:id="update_button" layoutX="47.0" layoutY="229.0" mnemonicParsing="false" onAction="#update" prefHeight="37.0" prefWidth="120.0" text="Update info">
@@ -28,16 +37,17 @@
                <font>
                   <Font name="Copperplate Gothic Light" size="12.0" />
                </font></Button>
-            <Label layoutX="50.0" layoutY="182.0" text="followings:" />
+            <Label layoutX="50.0" layoutY="182.0" text="followings:" textFill="#4b976c" />
             <Label fx:id="followings" layoutX="124.0" layoutY="182.0" text="Label" />
-            <Label layoutX="236.0" layoutY="182.0" text="followers:" />
+            <Label layoutX="236.0" layoutY="182.0" text="followers:" textFill="#45ab9c" />
             <Label fx:id="followers" layoutX="308.0" layoutY="182.0" text="Label" />
-            <Circle fx:id="circle" fill="DODGERBLUE" layoutX="76.0" layoutY="90.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle" fill="DODGERBLUE" layoutX="64.0" layoutY="73.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
             <JFXButton buttonType="RAISED" layoutX="158.0" layoutY="275.0" onAction="#go2postList" text="go to post list" textFill="#47badd">
                <font>
                   <Font name="Book Antiqua" size="12.0" />
                </font>
             </JFXButton>
+            <JFXButton layoutX="38.0" layoutY="135.0" onAction="#browseImage" text="browse" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>

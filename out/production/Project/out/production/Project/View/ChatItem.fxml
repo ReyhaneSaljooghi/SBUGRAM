@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton fx:id="directmessage_button" layoutX="140.0" layoutY="96.0" onAction="#enterChat" prefHeight="52.0" prefWidth="120.0" text="enter chat" />
+      <Label fx:id="username_field" layoutX="141.0" layoutY="51.0" prefHeight="17.0" prefWidth="120.0" text="username" />
+      <Label fx:id="date_label" layoutX="214.0" layoutY="175.0" prefHeight="17.0" prefWidth="135.0" text="Label" />
+      <Label layoutX="36.0" layoutY="175.0" text="last message date and time:" />
+   </children>
+</AnchorPane>

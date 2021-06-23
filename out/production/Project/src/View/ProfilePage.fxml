@@ -68,7 +68,7 @@
             </Button>
             <JFXButton fx:id="unmute_button" layoutX="285.0" layoutY="281.0" onAction="#unmute" prefHeight="39.0" prefWidth="67.0" text="unmute" visible="false" />
             <JFXButton fx:id="mute_button1" layoutX="285.0" layoutY="281.0" onAction="#mute" prefHeight="39.0" prefWidth="67.0" text="mute" visible="false" />
-            <JFXButton buttonType="RAISED" layoutX="148.0" layoutY="341.0" onAction="#go2timeline" text="go to post list">
+            <JFXButton buttonType="RAISED" layoutX="148.0" layoutY="326.0" onAction="#go2timeline" text="go to post list">
                <font>
                   <Font name="Roboto Black" size="14.0" />
                </font></JFXButton>

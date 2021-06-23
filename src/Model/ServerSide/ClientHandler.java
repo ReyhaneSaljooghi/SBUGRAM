@@ -97,6 +97,9 @@ public class ClientHandler implements Runnable {
                     case UnBlock:
                         answer=ServerHandlerCommands.unBlock(income);
                         break;
+                    case GetPersonalPost:
+                        answer=ServerHandlerCommands.personalPost(income);
+                        break;
 
                     default:
                         System.out.println("default");

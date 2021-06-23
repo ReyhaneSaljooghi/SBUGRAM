@@ -74,10 +74,14 @@ public class AddPostcontroller {
         Post newPost=new Post();
         newPost.setTitle(title_field.getText());
         newPost.setDescription(descroption_field.getText());
-        newPost.setPublisher(Main.currentProfile);
         newPost.setWriter(Main.currentusername);
         newPost.setImageAttachedTopost(image2set);
         ClientHandlerCommands.Addpost(newPost,Main.currentusername);
+        try {
+            new PageLoader().load("TimeLine");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void loadPostlist(ActionEvent actionEvent) {

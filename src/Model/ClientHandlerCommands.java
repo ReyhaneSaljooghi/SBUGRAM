@@ -42,6 +42,14 @@ public class ClientHandlerCommands {
         return (ArrayList<Post>) recieved.get("answer");
 
     }
+    public static ArrayList<Post>givePersonalPostsOfcurrentUser(String username){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command", Command.GetPersonalPost);
+        Map<String,Object> recieved = Clientconnection.serve(toSendserver);
+        return (ArrayList<Post>) recieved.get("answer");
+
+    }
     public static Profile get_profile_by_Username(String username){
         Map<String,Object> tosendserver = new HashMap<>();
         tosendserver .put("command", Command.getProfileByUsername);
@@ -113,11 +121,12 @@ public class ClientHandlerCommands {
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         return (boolean) recieved.get("answer");
     }
-    public static Profile update(String name,String birthyear,String userame){
+    public static Profile update(String name,String birthyear,byte[] image,String userame){
         Map<String,Object> toSendserver = new HashMap<>();
         toSendserver.put("name",name);
         toSendserver.put("username",userame);
         toSendserver.put("birthyear",birthyear);
+        toSendserver.put("image",image);
         toSendserver.put("command",Command.Update);
         Map<String,Object> recieved = Clientconnection.serve(toSendserver);
         Profile p= (Profile) recieved.get("answer");

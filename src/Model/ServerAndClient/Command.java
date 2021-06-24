@@ -22,4 +22,11 @@ public enum Command {
     GetPassword,
     Block,
     UnBlock,
+    GetChat,
+    GetAllChats,
+    SendMessage,
+    DeleteMessage,
+    EditMessage,
+    SetIsSenn,
+
 }

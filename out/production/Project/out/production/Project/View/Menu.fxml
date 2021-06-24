@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
    <children>
       <Button fx:id="Logout_button" layoutX="159.0" layoutY="473.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="39.0" prefWidth="82.0" text="LOG OUT" textFill="#389074">
          <font>
@@ -28,7 +28,7 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" graphicTextGap="9.0" layoutX="72.0" layoutY="314.0" onAction="#followList_action" prefHeight="39.0" prefWidth="258.0" text="look for people to follow" textFill="#307c80">
+      <JFXButton buttonType="RAISED" graphicTextGap="9.0" layoutX="72.0" layoutY="307.0" onAction="#followList_action" prefHeight="39.0" prefWidth="258.0" text="look for people to follow" textFill="#307c80" underline="true">
          <ripplerFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -40,6 +40,19 @@
          <font>
             <Font size="18.0" />
          </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" graphicTextGap="9.0" layoutX="72.0" layoutY="373.0" onAction="#direct_messages" prefHeight="39.0" prefWidth="258.0" text="Direct messages" textFill="#307c80" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
       </JFXButton>
    </children>
 </Pane>

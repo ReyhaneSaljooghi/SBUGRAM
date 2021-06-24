@@ -1,10 +1,7 @@
 package Model.ServerSide;
 
 import Model.DB.DataBase;
-import Model.ServerAndClient.Command;
-import Model.ServerAndClient.Comment;
-import Model.ServerAndClient.Post;
-import Model.ServerAndClient.Profile;
+import Model.ServerAndClient.*;
 
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -96,17 +93,18 @@ public class ServerHandlerCommands {
         if (CurrentUserposts == null)
             System.out.println("haji nulle ");
         List<Post> postAnswer = new ArrayList<>();
-        for (int i=CurrentUserposts.size()-1;i>=0;i--){
+        for (int i = CurrentUserposts.size() - 1; i >= 0; i--) {
             postAnswer.add(CurrentUserposts.get(i));
         }
         ans.put("answer", postAnswer);
-        System.out.println(thisusername+ " get posts list ");
+        System.out.println(thisusername + " get posts list ");
         System.out.println("at the time: " + formatter.format(new Date()));
         //DataBase.getDataBase().updateDB();
 
         return ans;
 
     }
+
     public static Map<String, Object> personalPost(Map<String, Object> income) {
         String thisusername = (String) income.get("username");
         Profile profile = ServerMain.profiles.get(thisusername);
@@ -120,11 +118,11 @@ public class ServerHandlerCommands {
         if (CurrentUserposts == null)
             System.out.println("haji nulle ");
         List<Post> postAnswer = new ArrayList<>();
-        for (int i=CurrentUserposts.size()-1;i>=0;i--){
+        for (int i = CurrentUserposts.size() - 1; i >= 0; i--) {
             postAnswer.add(CurrentUserposts.get(i));
         }
         ans.put("answer", postAnswer);
-        System.out.println(thisusername+ " get posts list ");
+        System.out.println(thisusername + " get posts list ");
         System.out.println("at the time: " + formatter.format(new Date()));
 
         return ans;
@@ -137,7 +135,7 @@ public class ServerHandlerCommands {
         Profile profile = ServerMain.profiles.get(username);
         ans.put("answer", profile);
         DataBase.getDataBase().updateDB();
-        System.out.println(username+ " get info ");
+        System.out.println(username + " get info ");
         System.out.println("at the time: " + formatter.format(new Date()));
         return ans;
     }
@@ -270,7 +268,7 @@ public class ServerHandlerCommands {
         Profile profile = ServerMain.profiles.get(username);
         String newname = (String) map.get("name");
         String newbirthyear = (String) map.get("birthyear");
-        byte[]image=(byte[])map.get("image");
+        byte[] image = (byte[]) map.get("image");
         profile.setName(newname);
         profile.setBirthYear(newbirthyear);
         profile.setProfileImage(image);
@@ -363,7 +361,8 @@ public class ServerHandlerCommands {
         Map<String, Object> ans = new HashMap<>();
         String username = (String) map.get("username");
         Profile profile = ServerMain.profiles.get(username);
-        Profile unblocked = ServerMain.profiles.get(map.get("unblocked"));
+        Profile unblocked = ServerMain.profiles.get(map
+                .get("unblocked"));
         profile.blockedUsers.remove(unblocked);
         System.out.println("action: " + username + " unblocked " + unblocked.getUsername());
         System.out.println("at the time: " + formatter.format(new Date()));
@@ -372,5 +371,123 @@ public class ServerHandlerCommands {
         return ans;
     }
 
+    public static Map<String, Object> sendChat(Map<String, Object> map) {
+        Map<String, Object> ans = new HashMap<>();
+        String firstperson = (String) map.get("firstPerson");
+        String secondperson = (String) map.get("secondPerson");
+        Profile profile1 = ServerMain.profiles.get(firstperson);
+        Profile profile2 = ServerMain.profiles.get(secondperson);
+        Chat answer = null;
+        for (int i = 0; i < ServerMain.Chats.size(); i++) {
+            System.out.println(ServerMain.Chats.get(i));
+            if (ServerMain.Chats.get(i).IsInChat(profile1) && ServerMain.Chats.get(i).getAnother(profile1).equals(profile2)) {
+                answer = ServerMain.Chats.get(i);
+                System.out.println("chat peyda shod" + ServerMain.Chats.get(i));
+                ans.put("answer", answer);
+            }
+        }
+        if (answer == (null)) {
+            Chat newChat = new Chat(profile1, profile2);
+            answer = newChat;
+            System.out.println("new chat built");
+            ans.put("answer", answer);
+            ServerMain.Chats.add(answer);
+        }
+//        for (Message it:answer.getMessages()){
+//            it.isSeen=true;
+//        }
+        System.out.println("action: " + firstperson + " get chat with  " + secondperson);
+        System.out.println("at the time: " + formatter.format(new Date()));
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
 
+
+    public static Map<String, Object> sendAllChat(Map<String, Object> map) {
+        Map<String, Object> ans = new HashMap<>();
+        String username = (String) map.get("username");
+        Profile profile = ServerMain.profiles.get(username);
+        ArrayList<Chat> answer = new ArrayList<>();
+        for (int i = 0; i < ServerMain.Chats.size(); i++) {
+            if (ServerMain.Chats.get(i).IsInChat(profile)) {
+                answer.add(ServerMain.Chats.get(i));
+
+            }
+        }
+
+        ans.put("answer", answer);
+        System.out.println("action: " + username + " get all chats ");
+        System.out.println("at the time: " + formatter.format(new Date()));
+        return ans;
+    }
+
+    public static Map<String, Object> sendMessage(Map<String, Object> map) {
+        Map<String, Object> ans = new HashMap<>();
+        Message message = (Message) map.get("message");
+
+        for (int i = 0; i < ServerMain.Chats.size(); i++) {
+            if (ServerMain.Chats.get(i).IsInChat(message.getSender()) &&
+                    ServerMain.Chats.get(i).getAnother(message.getSender()).equals(message.getReceiver())) {
+                ServerMain.Chats.get(i).getMessages().add(message);
+                ans.put("answer", ServerMain.Chats.get(i));
+                System.out.println("action: " + message.getSender() + " send message to  " + message.getReceiver());
+                System.out.println("at the time: " + formatter.format(new Date()));
+            }
+        }
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
+    public static Map<String, Object> deleteMessage(Map<String, Object> map) {
+        Map<String, Object> ans = new HashMap<>();
+        Message message = (Message) map.get("message");
+        for (int i=0;i<ServerMain.Chats.size();i++){
+            if (ServerMain.Chats.get(i).getMessages().contains(message)){
+                ServerMain.Chats.get(i).getMessages().remove(message);
+                ans.put("answer", ServerMain.Chats.get(i));
+            }
+        }
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
+
+    public static Map<String, Object> editMessage(Map<String, Object> map) {
+        Map<String, Object> ans = new HashMap<>();
+        Message message = (Message) map.get("message");
+        String text=(String) map.get("text");
+        for (int i=0;i<ServerMain.Chats.size();i++){
+            if (ServerMain.Chats.get(i).getMessages().contains(message)){
+               for (Message it:ServerMain.Chats.get(i).getMessages()) {
+                   if(it.equals(message)) {
+                       it.setMessage(text);
+                       ans.put("answer", ServerMain.Chats.get(i));
+                   }
+               }
+            }
+        }
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
+    public static Map<String, Object> setIsSeen(Map<String, Object> map) {
+        Map<String, Object> ans = new HashMap<>();
+        String firstperson = (String) map.get("firstPerson");
+        String secondperson = (String) map.get("secondPerson");
+        Profile profile1 = ServerMain.profiles.get(firstperson);
+        Profile profile2 = ServerMain.profiles.get(secondperson);
+        System.out.println("hey u");
+
+        for (int i = 0; i < ServerMain.Chats.size(); i++) {
+            if (ServerMain.Chats.get(i).IsInChat(profile1) &&
+                    ServerMain.Chats.get(i).getAnother(profile1).equals(profile2)) {
+             ServerMain.Chats.get(i);
+             for(Message it:ServerMain.Chats.get(i).getMessages()){
+                 if(it.getReceiver().equals(firstperson))
+                 it.isSeen=true;
+             }
+                System.out.println("chat peyda shod" + ServerMain.Chats.get(i));
+                ans.put("answer", ServerMain.Chats.get(i));
+            }
+        }
+        DataBase.getDataBase().updateDB();
+        return ans;
+    }
 }

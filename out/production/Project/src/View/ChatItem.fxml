@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,11 +10,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="380.0" style="-fx-background-color: #8bc9c0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton fx:id="directmessage_button" layoutX="140.0" layoutY="96.0" onAction="#enterChat" prefHeight="52.0" prefWidth="120.0" text="enter chat" />
-      <Label fx:id="username_field" layoutX="141.0" layoutY="51.0" prefHeight="17.0" prefWidth="120.0" text="username" />
-      <Label fx:id="date_label" layoutX="214.0" layoutY="175.0" prefHeight="17.0" prefWidth="135.0" text="Label" />
-      <Label layoutX="36.0" layoutY="175.0" text="last message date and time:" />
+      <Label fx:id="date_label" alignment="CENTER" layoutX="101.0" layoutY="216.0" prefHeight="17.0" prefWidth="199.0" text="Label" textAlignment="CENTER" textFill="#112221">
+         <font>
+            <Font name="Centaur" size="14.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="96.0" layoutY="178.0" text="last message date and time:" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font></Label>
+      <Label fx:id="username_field" alignment="CENTER" layoutX="121.0" layoutY="51.0" prefHeight="23.0" prefWidth="161.0" text="Label">
+         <font>
+            <Font name="Elephant" size="18.0" />
+         </font></Label>
+      <Button alignment="CENTER" layoutX="138.0" layoutY="111.0" mnemonicParsing="false" onAction="#enterChat" prefHeight="39.0" prefWidth="126.0" text="enter chat" textAlignment="CENTER" textFill="#2e655c">
+         <font>
+            <Font name="Courier 10 Pitch Bold BT" size="14.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="47.0" layoutY="40.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
    </children>
 </AnchorPane>

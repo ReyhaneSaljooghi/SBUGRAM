@@ -52,5 +52,11 @@ public class MenuController {
     }
 
 
-
+    public void direct_messages(ActionEvent actionEvent) {
+        try {
+            new PageLoader().load("PrivateChatTimeLine");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

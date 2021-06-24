@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.225752508361204, 0.6688963210702341" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChatController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="398.0" style="-fx-background-color: gray;">
+         <children>
+            <Circle fx:id="circle" fill="#54bfa1" layoutX="56.0" layoutY="52.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="username_label" layoutX="23.0" layoutY="94.0" prefHeight="30.0" prefWidth="75.0" text="username" />
+            <Button layoutX="232.0" layoutY="52.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="59.0" text="refresh">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button layoutX="314.0" layoutY="52.0" mnemonicParsing="false" onAction="#menu" prefHeight="25.0" prefWidth="59.0" text="menu">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button layoutX="149.0" layoutY="52.0" mnemonicParsing="false" onAction="#go2ChatList" text="Chat list">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <ListView fx:id="listView" layoutX="99.0" layoutY="40.0" prefHeight="296.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+      <AnchorPane prefHeight="123.0" prefWidth="398.0" style="-fx-background-color: #36a192;">
+         <children>
+            <TextArea fx:id="text_area" layoutX="103.0" layoutY="14.0" prefHeight="62.0" prefWidth="182.0" />
+            <Button layoutX="161.0" layoutY="140.0" mnemonicParsing="false" onAction="#send" prefHeight="30.0" prefWidth="75.0" style="-fx-border-radius: 20;" text="send">
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>

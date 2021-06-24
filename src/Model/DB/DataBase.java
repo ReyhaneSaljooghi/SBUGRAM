@@ -1,5 +1,6 @@
 package Model.DB;
 
+import Model.ServerAndClient.Chat;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
 import Model.ServerSide.ServerMain;
@@ -14,6 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DataBase {
     public static final String PROFILE_FILE = "Model/DB/profiles.bin";
     public static final String POSTS_FILE = "Model/DB/posts.bin";
+    public static final String CHAT_FILE = "Model/DB/chats.bin";
 
     private DataBase() {
     }
@@ -28,6 +30,7 @@ public class DataBase {
     public synchronized void loadfirst() {
         File profile_file = new File(PROFILE_FILE);
         File post_file = new File(POSTS_FILE);
+        File chat_file=new File(CHAT_FILE);
         if (!profile_file.exists()) {
             try {
                 profile_file.createNewFile();
@@ -56,12 +59,28 @@ public class DataBase {
         }catch (NullPointerException e){
 
         }
+        if (!chat_file.exists()) {
+            try {
+                chat_file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            ServerMain.Chats = new Vector<>((Vector<Chat>) readdb(CHAT_FILE));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e){
+
+        }
+
     }
 
     public synchronized void updateDB() {
         try {
             writedb(PROFILE_FILE,ServerMain.profiles);
             writedb(POSTS_FILE,ServerMain.AllPosts);
+            writedb(CHAT_FILE,ServerMain.Chats);
 
         } catch (IOException e) {
             e.printStackTrace();

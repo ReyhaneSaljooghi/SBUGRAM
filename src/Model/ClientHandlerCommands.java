@@ -192,6 +192,60 @@ public class ClientHandlerCommands {
         return (boolean) received.get("answer");
 
     }
+    public static Chat getChat(String first,String second){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("firstPerson",first);
+        toSendserver.put("secondPerson",second);
+        toSendserver.put("command",Command.GetChat);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (Chat) received.get("answer");
+
+    }
+    public static ArrayList<Chat> getAllChat(String username){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("username",username);
+        toSendserver.put("command",Command.GetAllChats);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (ArrayList<Chat>) received.get("answer");
+
+    }
+
+    public static Chat sendMessage(Message message){
+        Map<String,Object> toSendserver = new HashMap<>();
+     toSendserver.put("message",message);
+        toSendserver.put("command",Command.SendMessage);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (Chat) received.get("answer");
+
+    }
+    public static Chat deleteMessage(Message message){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("message",message);
+        toSendserver.put("command",Command.DeleteMessage);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (Chat) received.get("answer");
+
+    }
+    public static Chat editMessage(Message message,String text){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("message",message);
+        toSendserver.put("text",text);
+        toSendserver.put("command",Command.EditMessage);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (Chat) received.get("answer");
+
+    }
+
+
+    public static Chat setIsseen(String first,String second){
+        Map<String,Object> toSendserver = new HashMap<>();
+        toSendserver.put("command",Command.SetIsSenn);
+        toSendserver.put("firstPerson",first);
+        toSendserver.put("secondPerson",second);
+        Map<String,Object> received = Clientconnection.serve(toSendserver);
+        return (Chat) received.get("answer");
+
+    }
 
 
 }

@@ -9,7 +9,7 @@
 
 <SplitPane dividerPositions="0.18896321070234115" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PrivateChatTimeLinecontroller">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="398.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="0.0">
          <children>
             <JFXButton fx:id="refresh_button" layoutX="316.0" layoutY="33.0" onAction="#refresh" text="refresh" />
             <JFXTextField fx:id="text_feild" layoutX="24.0" layoutY="33.0" prefHeight="25.0" prefWidth="124.0" />
@@ -17,7 +17,7 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <ListView fx:id="listView" layoutX="110.0" layoutY="114.0" prefHeight="502.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ListView fx:id="listView" layoutX="110.0" layoutY="114.0" prefHeight="502.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>

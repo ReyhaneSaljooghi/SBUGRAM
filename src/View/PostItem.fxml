@@ -61,7 +61,10 @@
       <TextArea fx:id="post_description_area" layoutX="61.0" layoutY="181.0" prefHeight="67.0" prefWidth="238.0" promptText="description">
          <effect>
             <DropShadow />
-         </effect></TextArea>
+         </effect>
+         <font>
+            <Font name="Sitka Display" size="14.0" />
+         </font></TextArea>
       <Button fx:id="view_profile_button" layoutX="141.0" layoutY="446.0" mnemonicParsing="false" onAction="#view_profile" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: lightcyan;" text="view profile">
          <effect>
             <DropShadow>
@@ -71,12 +74,12 @@
             </DropShadow>
          </effect>
       </Button>
-      <Label layoutX="42.0" layoutY="373.0" prefHeight="21.0" prefWidth="52.0" text="Likes:">
+      <Label layoutX="20.0" layoutY="373.0" prefHeight="21.0" prefWidth="74.0" text="Likes:">
          <font>
             <Font name="Sitka Banner" size="18.0" />
          </font></Label>
       <Label fx:id="numberOflikes" layoutX="102.0" layoutY="375.0" prefHeight="17.0" prefWidth="41.0" text="Label" />
-      <Label layoutX="198.0" layoutY="372.0" prefHeight="21.0" prefWidth="67.0" text="reposts:">
+      <Label layoutX="184.0" layoutY="372.0" prefHeight="21.0" prefWidth="81.0" text="reposts:">
          <font>
             <Font name="Sitka Banner" size="18.0" />
          </font></Label>

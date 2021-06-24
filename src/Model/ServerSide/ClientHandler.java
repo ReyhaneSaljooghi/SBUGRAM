@@ -100,6 +100,24 @@ public class ClientHandler implements Runnable {
                     case GetPersonalPost:
                         answer=ServerHandlerCommands.personalPost(income);
                         break;
+                    case GetChat:
+                        answer=ServerHandlerCommands.sendChat(income);
+                        break;
+                    case GetAllChats:
+                        answer=ServerHandlerCommands.sendAllChat(income);
+                        break;
+                    case SendMessage:
+                        answer=ServerHandlerCommands.sendMessage(income);
+                        break;
+                    case DeleteMessage:
+                        answer=ServerHandlerCommands.deleteMessage(income);
+                        break;
+                    case EditMessage:
+                        answer=ServerHandlerCommands.editMessage(income);
+                        break;
+                    case SetIsSenn:
+                        answer=ServerHandlerCommands.setIsSeen(income);
+                        break;
 
                     default:
                         System.out.println("default");

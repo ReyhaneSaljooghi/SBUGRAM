@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="edit_button" layoutX="229.0" layoutY="197.0" mnemonicParsing="false" onAction="#edit" prefHeight="27.0" prefWidth="52.0" text="edit">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <font>
+            <Font name="Garamond" size="14.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="300.0" layoutY="196.0" mnemonicParsing="false" onAction="#delete" text="delete">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <font>
+            <Font name="Garamond" size="14.0" />
+         </font></Button>
+      <Label fx:id="time_label" layoutX="22.0" layoutY="209.0" prefHeight="17.0" prefWidth="136.0" text="Label" />
+      <TextArea fx:id="hidden_text" layoutX="170.0" layoutY="27.0" prefHeight="94.0" prefWidth="182.0" visible="false" />
+      <Label fx:id="message_text" alignment="TOP_LEFT" layoutX="170.0" layoutY="27.0" prefHeight="94.0" prefWidth="182.0" text="Label">
+         <font>
+            <Font name="Bodoni MT" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="finish_button" layoutX="178.0" layoutY="198.0" mnemonicParsing="false" onAction="#finishEdit" prefHeight="17.0" prefWidth="24.0" text="Button" visible="false" />
+      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="158.0" layoutY="211.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+   </children>
+</AnchorPane>

@@ -2,6 +2,7 @@ package Model.ServerSide;
 
 import Model.DB.DataBase;
 import Model.Main;
+import Model.ServerAndClient.Chat;
 import Model.ServerAndClient.Post;
 import Model.ServerAndClient.Profile;
 import javafx.scene.image.Image;
@@ -23,6 +24,7 @@ public class ServerMain {
 
     public static Map<String, Profile> profiles = new ConcurrentHashMap<>();
     public static Vector<Post> AllPosts= new Vector<>();
+    public static Vector<Chat> Chats= new Vector<>();
 
     public static boolean isServerUp(){
         return isUp;
@@ -32,10 +34,9 @@ public class ServerMain {
     public static void main(String[] args) throws IOException {
 
      DataBase.getDataBase().loadfirst();
-     System.out.println(profiles);
-     AllPosts.clear();
-     DataBase.getDataBase().updateDB();
-
+    System.out.println(Chats);
+    System.out.println(profiles);
+    System.out.println(profiles.get("nahid").getProfileImage());
      ServerSocket ss = null;
         try {
             ss = new ServerSocket(PORT);

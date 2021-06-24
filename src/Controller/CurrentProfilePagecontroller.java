@@ -36,7 +36,7 @@ public class CurrentProfilePagecontroller {
     public ListView<Post> postlist;
     public byte[]newImage;
     ArrayList<Post> allPostsOfThisProfile = new ArrayList<>();
-    Post thisPost = new Post();
+
 
     @FXML
     public void initialize() {
@@ -63,7 +63,7 @@ public class CurrentProfilePagecontroller {
     public void update(ActionEvent actionEvent) throws IOException {
         String name = name_field.getText();
         String year = birthYear_field.getText();
-        ClientHandlerCommands.update(name, year,Main.profileImage, Main.currentusername);
+       thisProfile= ClientHandlerCommands.update(name, year,Main.profileImage, Main.currentusername);
         new PageLoader().load("CurrentProfilePage");
     }
 
@@ -94,7 +94,6 @@ public class CurrentProfilePagecontroller {
         }
         FileInputStream fileInputStream=new FileInputStream(file);
         Main.profileImage=fileInputStream.readAllBytes();
-        newImage=fileInputStream.readAllBytes();
         Image image=new Image(new ByteArrayInputStream(Main.profileImage));
         circle.setFill(new ImagePattern(image));
     }

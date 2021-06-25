@@ -13,6 +13,10 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
+/**
+ * this is the controller  of the first page
+ * user should enter the username and password to sign in
+ */
 public class LoginController {
     @FXML
     public Button sign_in_button;

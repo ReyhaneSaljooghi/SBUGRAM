@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
@@ -12,8 +13,11 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="398.0" style="-fx-background-color: gray;">
          <children>
-            <Circle fx:id="circle" fill="#54bfa1" layoutX="56.0" layoutY="52.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="username_label" layoutX="23.0" layoutY="94.0" prefHeight="30.0" prefWidth="75.0" text="username" />
+            <Circle fx:id="circle" fill="#afe8d7" layoutX="56.0" layoutY="52.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="username_label" layoutX="23.0" layoutY="94.0" prefHeight="30.0" prefWidth="75.0" text="username">
+               <font>
+                  <Font name="Bell MT" size="12.0" />
+               </font></Label>
             <Button layoutX="232.0" layoutY="52.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="59.0" text="refresh">
                <effect>
                   <DropShadow />
@@ -35,9 +39,16 @@
          <children>
             <ListView fx:id="listView" layoutX="99.0" layoutY="40.0" prefHeight="296.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children></AnchorPane>
-      <AnchorPane prefHeight="123.0" prefWidth="398.0" style="-fx-background-color: #36a192;">
+      <AnchorPane prefHeight="123.0" prefWidth="398.0" style="-fx-background-color: #afe8d7;">
          <children>
-            <TextArea fx:id="text_area" layoutX="103.0" layoutY="14.0" prefHeight="62.0" prefWidth="182.0" />
+            <TextArea fx:id="text_area" layoutX="103.0" layoutY="14.0" prefHeight="90.0" prefWidth="196.0">
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </InnerShadow>
+               </effect></TextArea>
             <Button layoutX="161.0" layoutY="140.0" mnemonicParsing="false" onAction="#send" prefHeight="30.0" prefWidth="75.0" style="-fx-border-radius: 20;" text="send">
                <effect>
                   <InnerShadow />

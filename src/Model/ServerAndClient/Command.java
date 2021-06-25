@@ -1,5 +1,8 @@
 package Model.ServerAndClient;
 
+/**
+ * an enum to define the client commands
+ */
 public enum Command {
     sign_in,
     sign_up,

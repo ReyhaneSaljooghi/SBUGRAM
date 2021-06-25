@@ -10,21 +10,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="380.0" style="-fx-background-color: #8bc9c0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="370.0" style="-fx-background-color: #8bc9c0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="date_label" alignment="CENTER" layoutX="101.0" layoutY="216.0" prefHeight="17.0" prefWidth="199.0" text="Label" textAlignment="CENTER" textFill="#112221">
+      <Label fx:id="date_label" alignment="CENTER" layoutX="86.0" layoutY="215.0" prefHeight="17.0" prefWidth="199.0" text="Label" textAlignment="CENTER" textFill="#112221">
          <font>
             <Font name="Centaur" size="14.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="96.0" layoutY="178.0" text="last message date and time:" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="81.0" layoutY="176.0" text="last message date and time:" textAlignment="CENTER">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></Label>
-      <Label fx:id="username_field" alignment="CENTER" layoutX="121.0" layoutY="51.0" prefHeight="23.0" prefWidth="161.0" text="Label">
+      <Label fx:id="username_field" alignment="CENTER" layoutX="105.0" layoutY="55.0" prefHeight="23.0" prefWidth="161.0" text="Label">
          <font>
             <Font name="Elephant" size="18.0" />
          </font></Label>
-      <Button alignment="CENTER" layoutX="138.0" layoutY="111.0" mnemonicParsing="false" onAction="#enterChat" prefHeight="39.0" prefWidth="126.0" text="enter chat" textAlignment="CENTER" textFill="#2e655c">
+      <Button alignment="CENTER" layoutX="122.0" layoutY="111.0" mnemonicParsing="false" onAction="#enterChat" prefHeight="39.0" prefWidth="126.0" text="enter chat" textAlignment="CENTER" textFill="#2e655c">
          <font>
             <Font name="Courier 10 Pitch Bold BT" size="14.0" />
          </font>

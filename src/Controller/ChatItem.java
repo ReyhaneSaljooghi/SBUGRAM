@@ -9,7 +9,7 @@ import java.io.IOException;
 /*this is the post item class in the client side
  * it is different from the post class which is common between server and client */
 public class ChatItem extends ListCell<Chat> {
-//ina kharabe
+
     @Override
     public void updateItem(Chat chat, boolean empty) {
         super.updateItem(chat, empty);

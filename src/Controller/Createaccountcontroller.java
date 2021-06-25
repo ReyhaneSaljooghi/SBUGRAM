@@ -29,7 +29,8 @@ import java.nio.file.Files;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/*this is the controller of create account fxml file
+* user sign up after it enter the necessary fields*/
 public class Createaccountcontroller  {
     private final static String PICTURE_DEFAULT = "images/2.jpg";
     public TextField name_feild;
@@ -43,13 +44,16 @@ public class Createaccountcontroller  {
 
     @FXML
     public void initialize() throws IOException {
-       File file=new File("C:\\Users\\Saljooghi\\Desktop\\Project\\images\\istockphoto-922962354-612x612.jpg");
+       File file=new File("images/istockphoto-922962354-612x612.jpg");
        Main.profileImage=Files.readAllBytes(file.toPath());
         Image image=new Image(new ByteArrayInputStream(Main.profileImage));
         circle.setFill(new ImagePattern(image));
     }
 
-
+    /**
+     *
+     * @param actionEvent
+     */
 
     public void sign_up(ActionEvent actionEvent) {
         System.out.println(username_feild.getText());
@@ -73,6 +77,11 @@ public class Createaccountcontroller  {
         }
 
     }
+
+    /**
+     *
+     * @return Profile
+     */
     public Profile makeprofile(){
         Profile ans=new Profile(username_feild.getText());
         ans.setPassword(password_field.getText());
@@ -97,6 +106,10 @@ public class Createaccountcontroller  {
 
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void sign_in(ActionEvent actionEvent) {
         try {
             new PageLoader().load("SignInOut");

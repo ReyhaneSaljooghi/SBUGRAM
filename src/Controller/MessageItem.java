@@ -6,6 +6,7 @@ import javafx.scene.control.ListCell;
 
 import java.io.IOException;
 
+
 public class MessageItem extends ListCell<Message> {
 
     @Override

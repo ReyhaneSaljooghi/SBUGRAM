@@ -4,8 +4,10 @@ import Model.ServerAndClient.*;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-/*this class contains all methods to send the command to the server and receive the answer
-* the return types are  different  but all the information is in map*/
+/**this class contains all methods to send the command to the server and receive the answer
+ * the return types are  different  but all the information is in map
+ * @author reyhane:)
+ * */
 public class ClientHandlerCommands {
     public static Profile sign_in(String username, String password){
         Map<String,Object> tosendserver = new HashMap<>();

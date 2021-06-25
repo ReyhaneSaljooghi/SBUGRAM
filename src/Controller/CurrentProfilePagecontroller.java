@@ -60,9 +60,15 @@ public class CurrentProfilePagecontroller {
 
     }
 
+    /**
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void update(ActionEvent actionEvent) throws IOException {
         String name = name_field.getText();
         String year = birthYear_field.getText();
+        System.out.println(Main.profileImage);
        thisProfile= ClientHandlerCommands.update(name, year,Main.profileImage, Main.currentusername);
         new PageLoader().load("CurrentProfilePage");
     }
@@ -92,9 +98,11 @@ public class CurrentProfilePagecontroller {
         if (file==null){
             return;
         }
+        System.out.println(Main.profileImage);
         FileInputStream fileInputStream=new FileInputStream(file);
         Main.profileImage=fileInputStream.readAllBytes();
         Image image=new Image(new ByteArrayInputStream(Main.profileImage));
+        System.out.println(Main.profileImage);
         circle.setFill(new ImagePattern(image));
     }
 }

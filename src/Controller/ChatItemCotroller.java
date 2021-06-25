@@ -9,6 +9,7 @@ import Model.ServerAndClient.Post;
 import Model.ServerSide.ServerMain;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -22,6 +23,8 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+/*this is the controller for chat item fxml but it is not set for it
+* each list item will have its exclusive controller in runtime so we set the controller as we load the fxml*/
 public class ChatItemCotroller {
     public AnchorPane root;
     public Label username_field;
@@ -55,11 +58,15 @@ public class ChatItemCotroller {
         }
         return root;
     }
-
+//we enter to the chat with  a specific person
     public void   enterChat(ActionEvent actionEvent){
-
+        if (ClientHandlerCommands.get_profile_by_Username(chat.getAnother(Main.currentusername)).blockedUsers
+                .contains(ClientHandlerCommands.get_profile_by_Username(Main.currentusername))){
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"This user has blocked you!");
+            alert.showAndWait();
+            return;
+        }
         ChatController.chat=chat;
-        System.out.println("hey");
         try {
             new PageLoader().load("Chat");
         } catch (IOException e) {

@@ -12,13 +12,17 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
-
+/*
+* this is the controller of private-chat-timeline fxml file
+* it shows all chats of a user
+*/
 public class PrivateChatTimeLinecontroller {
 
     public JFXButton refresh_button;
@@ -41,6 +45,12 @@ public class PrivateChatTimeLinecontroller {
 
         public void search(ActionEvent actionEvent) {
 //      String second= text_feild.getText();
+            if (ClientHandlerCommands.get_profile_by_Username(text_feild.getText()).blockedUsers
+                    .contains(ClientHandlerCommands.get_profile_by_Username(Main.currentusername))){
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"This user has blocked you!");
+                alert.showAndWait();
+                return;
+            }
             Chats = (ArrayList<Chat>) Chats.stream().filter(chat1 -> chat1.getAnother(Main.currentusername).
                     equals(text_feild.getText())).collect(Collectors.toList());
             if (Chats.size() == 0) {

@@ -7,9 +7,10 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Map;
 
-/*This class is thread so it implements runnable.
- it handles the commands and
-  finally sends the result to the client*/
+/**This class is thread so it implements runnable.
+ * it handles the commands and
+ * finally sends the result to the client
+ * it reads from the client and call ClientHandlerCommand class methods based on the command*/
 
 public class ClientHandler implements Runnable {
     private Socket userSocket;

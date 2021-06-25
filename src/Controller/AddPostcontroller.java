@@ -19,7 +19,9 @@ import javafx.util.Duration;
 
 import java.io.*;
 import java.nio.file.Files;
-/*this is the controller of add post fxml file*/
+
+/*this is the controller of add post fxml file
+*/
 public class AddPostcontroller {
     
     public TextArea descroption_field;
@@ -69,7 +71,7 @@ public class AddPostcontroller {
         Image image=new Image(new ByteArrayInputStream(b));
        image_view_field.setImage(image);
     }
-
+//send the new post to server but the profile is not set here. it will be set in the server side
     public void Publish(ActionEvent actionEvent) {
         Post newPost=new Post();
         newPost.setTitle(title_field.getText());

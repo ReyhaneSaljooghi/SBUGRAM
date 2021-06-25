@@ -8,6 +8,11 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * this is the message class which each chat object has an array of this class
+ * this is serializable bcz we want to convert an Object to stream
+ * that we can send over the network or save it as file or store in DB for later usage
+ */
 public class Message implements Serializable {
     private String message;
     public boolean isSeen=false;

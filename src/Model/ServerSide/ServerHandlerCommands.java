@@ -271,7 +271,14 @@ public class ServerHandlerCommands {
         byte[] image = (byte[]) map.get("image");
         profile.setName(newname);
         profile.setBirthYear(newbirthyear);
-        profile.setProfileImage(image);
+        if (image!=null) {
+            profile.setProfileImage(image);
+        }
+        for (Post it:ServerMain.AllPosts){
+            if (it.getPublisher().equals(profile))
+                it.getPublisher().setProfileImage(image);
+        }
+        System.out.println(image);
         ans.put("answer", profile);
         System.out.println("action: " + username + " update her/his profile ");
         System.out.println("at the time: " + formatter.format(new Date()));

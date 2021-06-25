@@ -19,7 +19,9 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-
+/*this is the controller of message item.
+ * each list item will have its exclusive controller in runtime so we set the controller as we load the fxml
+ */
 public class MessageItemController {
     public AnchorPane root;
     public Label message_text;
@@ -46,9 +48,10 @@ public class MessageItemController {
         message_text.setText(message.getMessage());
         time_label.setText(message.createdTimeString);
         if (message.getSender().equals(Main.currentusername))
-            root.setStyle("-fx-background-color: #72bfb9");
-        else
-            root.setStyle("-fx-background-color: #aabcb5");
+            message_text.setStyle("-fx-background-color: #72bfb9");
+        else {
+            message_text.setStyle("-fx-background-color: #aabcb5");
+        }
         return root;
     }
 

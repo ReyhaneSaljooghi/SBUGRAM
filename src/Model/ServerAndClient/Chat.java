@@ -5,6 +5,13 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.Vector;
 
+/**
+ * this is the chat class
+ * @author reyhane:)
+ * it has to profile and a vector of messages
+ * this is serializable bcz we want to convert an Object to stream
+ * that we can send over the network or save it as file or store in DB for later usage
+ */
 public class Chat implements Serializable,Comparable<Chat> {
     /**
      * use serialVersionUID

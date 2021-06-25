@@ -6,11 +6,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Vector;
-/*this class contains all information for a post
-* it implements serializable
-* so it has a serialVersionUID */
+
+/**
+ * this class contains all information for a post
+ * it implements serializable
+ * so it has a serialVersionUID
+ * this is serializable bcz we want to convert an Object to stream
+ * that we can send over the network or save it as file or store in DB for later usage
+ */
 public class Post implements Comparable<Post>, Serializable {
-    private static final long serialVersionUID= 5032982360233766940L;
+    private static final long serialVersionUID = 5032982360233766940L;
 
 
     private String writer;
@@ -21,8 +26,8 @@ public class Post implements Comparable<Post>, Serializable {
     public int numberOfReposts = 0;
     public String createdTimeString;
     public Profile publisher;
-    public Vector<Profile> Likers=new Vector<>();
-    public Vector<Comment>comments=new Vector<>();
+    public Vector<Profile> Likers = new Vector<>();
+    public Vector<Comment> comments = new Vector<>();
 
     public Profile getPublisher() {
         return this.publisher;
@@ -92,7 +97,7 @@ public class Post implements Comparable<Post>, Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return Objects.equals(title, post.title)&&Objects.equals(description, post.description);
+        return Objects.equals(title, post.title) && Objects.equals(description, post.description);
     }
 
     @Override

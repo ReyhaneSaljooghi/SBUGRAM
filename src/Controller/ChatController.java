@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class ChatController {
 
-
+/*this is the controller of chat fxml file */
     public Circle circle;
     public ListView<Message> listView;
     public Label username_label;

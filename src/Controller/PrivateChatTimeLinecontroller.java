@@ -43,9 +43,11 @@ public class PrivateChatTimeLinecontroller {
 //      String second= text_feild.getText();
             Chats = (ArrayList<Chat>) Chats.stream().filter(chat1 -> chat1.getAnother(Main.currentusername).
                     equals(text_feild.getText())).collect(Collectors.toList());
-//      Chat chat=ClientHandlerCommands.getChat(Main.currentusername,second);
-//      Chats.clear();
-//      Chats.add(chat);
+            if (Chats.size() == 0) {
+                Chats.clear();
+                Chats.add(ClientHandlerCommands.getChat(Main.currentusername,text_feild.getText()));
+
+            }
 
             listView.setItems(FXCollections.observableArrayList(Chats));
             listView.setCellFactory(listView -> new ChatItem());

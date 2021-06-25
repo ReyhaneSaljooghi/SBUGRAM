@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,12 +8,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.34782608695652173" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Timelinecontroller">
+<SplitPane dividerPositions="0.34448160535117056" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Timelinecontroller">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: gray;">
          <children>
-            <Button fx:id="refresh_button" layoutX="165.0" layoutY="24.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="39.0" prefWidth="69.0" text="refresh" />
-            <Button fx:id="Menu_button" layoutX="167.0" layoutY="100.0" mnemonicParsing="false" onAction="#GotoMenu" prefHeight="39.0" prefWidth="69.0" text="Menu" />
+            <Button fx:id="refresh_button" layoutX="165.0" layoutY="24.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="39.0" prefWidth="69.0" text="refresh">
+               <effect>
+                  <Reflection />
+               </effect>
+               <font>
+                  <Font name="Centaur" size="14.0" />
+               </font></Button>
+            <Button fx:id="Menu_button" layoutX="165.0" layoutY="119.0" mnemonicParsing="false" onAction="#GotoMenu" prefHeight="39.0" prefWidth="69.0" text="Menu">
+               <effect>
+                  <Reflection />
+               </effect>
+               <font>
+                  <Font name="Centaur" size="14.0" />
+               </font></Button>
          </children>
          <effect>
             <ColorAdjust />

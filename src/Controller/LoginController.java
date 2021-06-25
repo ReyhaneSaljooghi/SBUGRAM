@@ -27,9 +27,7 @@ public class LoginController {
 
     @FXML
     public void initialize() {
-        TranslateTransition t = new TranslateTransition(Duration.millis(1600), sign_in_button);
-        t.setToY(-45);
-        t.playFromStart();
+
         TranslateTransition t2 = new TranslateTransition(Duration.millis(1720), sign_up_button);
         t2.setToY(-55);
         t2.playFromStart();

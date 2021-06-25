@@ -34,9 +34,7 @@ public class ServerMain {
     public static void main(String[] args) throws IOException {
 
      DataBase.getDataBase().loadfirst();
-    System.out.println(Chats);
-    System.out.println(profiles);
-    System.out.println(profiles.get("nahid").getProfileImage());
+
      ServerSocket ss = null;
         try {
             ss = new ServerSocket(PORT);

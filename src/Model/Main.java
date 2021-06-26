@@ -1,4 +1,5 @@
 package Model;
+
 import Model.ServerAndClient.Profile;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,12 +8,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-/*this is the main class that should be run in the client side
-* it contains static information of the current user */
+/**
+ * this is the main class that should be run in the client side
+ * it contains static information of the current user
+ */
 public class Main extends Application {
     public static Profile currentProfile;
-    public  static String currentusername;
-    public  static String currentpassword;
+    public static String currentusername;
+    public static String currentpassword;
     public static byte[] profileImage;
 
     public static void setCurrentProfile(Profile currentProfile) {
@@ -20,7 +23,7 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         PageLoader.initStage(primaryStage);
         new PageLoader().load("SignInOut");
     }

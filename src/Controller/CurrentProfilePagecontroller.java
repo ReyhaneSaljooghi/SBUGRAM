@@ -21,7 +21,7 @@ import javafx.stage.Popup;
 
 import java.io.*;
 import java.util.ArrayList;
-/*this is the controller for the current profile page
+/**this is the controller for the current profile page
 * so it has update button */
 public class CurrentProfilePagecontroller {
     public static Profile thisProfile;

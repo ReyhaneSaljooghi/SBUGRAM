@@ -23,7 +23,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-/*this is the controller for chat item fxml but it is not set for it
+/**this is the controller for chat item fxml but it is not set for it
 * each list item will have its exclusive controller in runtime so we set the controller as we load the fxml*/
 public class ChatItemCotroller {
     public AnchorPane root;

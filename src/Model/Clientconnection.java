@@ -8,9 +8,11 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.Map;
 
-/*this class send and receive the information
-* the first method is called in teh beginning of the program
-* the serve method is the main method which send and receive */
+/**
+ * this class send and receive the information
+ * the first method is called in teh beginning of the program
+ * the serve method is the main method which send and receive
+ * */
 public class Clientconnection
 {
     public static String serverAddress="localhost";

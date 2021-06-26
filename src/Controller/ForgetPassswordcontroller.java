@@ -15,7 +15,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-/*this class controls forget_password fxml file*/
+/**this class controls forget_password fxml file*/
 public class ForgetPassswordcontroller {
     public JFXTextField username_field;
     public JFXTextField email_field;

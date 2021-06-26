@@ -7,7 +7,7 @@ import javafx.scene.control.ListCell;
 
 import java.io.IOException;
 
-/*this is the comment item class in the client side
+/**this is the comment item class in the client side
  * it is different from the comment class which is common between server and client */
 public class commentItem extends ListCell<Comment>  {
     @Override

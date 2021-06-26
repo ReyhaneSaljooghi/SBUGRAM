@@ -19,8 +19,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
-/*
-* this is the controller of private-chat-timeline fxml file
+/**
+ * this is the controller of private-chat-timeline fxml file
 * it shows all chats of a user
 */
 public class PrivateChatTimeLinecontroller {

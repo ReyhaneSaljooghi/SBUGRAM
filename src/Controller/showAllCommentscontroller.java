@@ -13,7 +13,7 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.util.ArrayList;
-/*this is the controller of showComments fxml file*/
+/**this is the controller of showComments fxml file*/
 public class showAllCommentscontroller {
     public ListView<Comment> CommentList;
     public static  Post post;

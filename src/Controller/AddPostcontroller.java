@@ -20,7 +20,7 @@ import javafx.util.Duration;
 import java.io.*;
 import java.nio.file.Files;
 
-/*this is the controller of add post fxml file
+/**this is the controller of add post fxml file
 */
 public class AddPostcontroller {
     

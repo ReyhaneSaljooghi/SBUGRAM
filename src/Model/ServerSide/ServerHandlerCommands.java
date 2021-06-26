@@ -7,9 +7,11 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.*;
-/*this class contains all methods for handling commands.
-ClientHandler use this class.
-all methods return a map which contains the information to be sent to the client*/
+/**
+ * this class contains all methods for handling commands.
+ * ClientHandler use this class.
+ * all methods return a map which contains the information to be sent to the client
+ */
 
 public class ServerHandlerCommands {
     public static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

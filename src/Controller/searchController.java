@@ -22,8 +22,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
-/*this class control Search to follow fxml file.
-* it gets all profiles from the server and load them for the client*/
+/**this class control Search to follow fxml file.
+* it gets all profiles from the server and load them for the client
+*/
 public class searchController implements Initializable {
 
 

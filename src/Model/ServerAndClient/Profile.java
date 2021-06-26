@@ -2,14 +2,17 @@ package Model.ServerAndClient;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-/*this class contains all information about a user
-* we have an object of this class for each use
-* it implements serializable in order to be serialized
-* the equal method is based on username bcz the username is unique */
+
+/**
+ * this class contains all information about a user
+ * we have an object of this class for each use
+ * it implements serializable in order to be serialized
+ * the equal method is based on username bcz the username is unique
+ */
 
 public class Profile implements Serializable {
     private static final long serialVersionUID = -7523282726772266610L;
-    private  String username;
+    private String username;
     private String password;
     private String name;
     private String birthYear;
@@ -17,12 +20,13 @@ public class Profile implements Serializable {
     private String email;
     byte[] profileImage;
 
-    public  ArrayList<Profile>followings=new ArrayList<>();
-    public  ArrayList<Profile>followers=new ArrayList<>();
-    public  ArrayList<Profile>mutedUsers=new ArrayList<>();
-    public  ArrayList<Profile>blockedUsers=new ArrayList<>();
-    public Profile(String username){
-        this.username =username;
+    public ArrayList<Profile> followings = new ArrayList<>();
+    public ArrayList<Profile> followers = new ArrayList<>();
+    public ArrayList<Profile> mutedUsers = new ArrayList<>();
+    public ArrayList<Profile> blockedUsers = new ArrayList<>();
+
+    public Profile(String username) {
+        this.username = username;
     }
 
     public byte[] getProfileImage() {
@@ -52,15 +56,13 @@ public class Profile implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) return false;
+        if (obj == null) return false;
 
-        try{
+        try {
 
-            return this.username.equals(((Profile)obj).getUserName());
+            return this.username.equals(((Profile) obj).getUserName());
 
-        }
-
-        catch(Exception e){
+        } catch (Exception e) {
 
             return false;
 
@@ -69,7 +71,7 @@ public class Profile implements Serializable {
 
     @Override
     public String toString() {
-        return  username ;
+        return username;
     }
 
     public String getUserName() {
@@ -104,8 +106,8 @@ public class Profile implements Serializable {
         this.name = name;
     }
 
-    public String getBirthYear(){
-       return birthYear;
+    public String getBirthYear() {
+        return birthYear;
     }
 
 

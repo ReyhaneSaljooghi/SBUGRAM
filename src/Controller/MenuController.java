@@ -9,7 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 
 import java.io.IOException;
-/*this class controls the menu fxml file*/
+/**this class controls the menu fxml file*/
 public class MenuController {
     public Button NewPost_button;
     public Button Logout_button;

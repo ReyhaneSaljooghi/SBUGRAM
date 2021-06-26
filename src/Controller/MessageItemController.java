@@ -19,7 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-/*this is the controller of message item.
+/**this is the controller of message item.
  * each list item will have its exclusive controller in runtime so we set the controller as we load the fxml
  */
 public class MessageItemController {

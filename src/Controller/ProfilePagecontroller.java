@@ -18,7 +18,7 @@ import javafx.scene.image.ImageView;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-/*this class controls profile page of another user not the current one */
+/**this class controls profile page of another user not the current one */
 public class ProfilePagecontroller {
     public static Profile profile;
     public  Label following_label;

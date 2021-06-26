@@ -29,7 +29,7 @@ import java.nio.file.Files;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/*this is the controller of create account fxml file
+/**this is the controller of create account fxml file
 * user sign up after it enter the necessary fields*/
 public class Createaccountcontroller  {
     private final static String PICTURE_DEFAULT = "images/2.jpg";
